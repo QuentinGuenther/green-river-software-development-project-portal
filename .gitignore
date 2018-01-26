@@ -1,6 +1,7 @@
 *.PHPPROJ
 *.phpproj
 *.sln
+*.user
 vendor/
 .vs/
 tmp/

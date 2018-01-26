@@ -1,0 +1,23 @@
+﻿body {
+    background-image: url("/images/login_gator_rev_background_cover.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+#login-content {
+    width: 400px;
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    background: #eaeaea;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.btn-green {
+    background-color: #026604;
+    color: #ffffff;
+}
