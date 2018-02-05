@@ -15,7 +15,7 @@
     $f3->set('DEBUG', 3);
 
     // Default route
-    $f3->route('GET /', function() {
+    $f3->route('GET|POST /', function() {
         $template = new Template();
         echo $template->render('views/home.html');
     });

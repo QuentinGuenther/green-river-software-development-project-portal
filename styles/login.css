@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url("/images/login_gator_rev_background_cover.png");
+    background-image: url("../images/login_gator_rev_background_cover.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -20,4 +20,8 @@
 .btn-green {
     background-color: #026604;
     color: #ffffff;
+}
+
+.btn-green:hover {
+     background-color: #039806;
 }
