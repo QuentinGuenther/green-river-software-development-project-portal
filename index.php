@@ -25,6 +25,10 @@
         echo Template::instance()->render('views/login.html');
     });
 
+    $f3->route('GET /new-project', function() {
+        echo Template::instance()->render('views/forms/project_info.html');
+    });
+
     // Error page
     $f3->set('ONERROR', function($f3) {
         echo Template::instance()->render('views/error.html');
