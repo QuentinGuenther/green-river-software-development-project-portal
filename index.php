@@ -29,6 +29,10 @@
         echo Template::instance()->render('views/forms/project_info.html');
     });
 
+    $f3->route('GET /new-class', function() {
+        echo Template::instance()->render('views/forms/class.html');
+    });
+
     // Error page
     $f3->set('ONERROR', function($f3) {
         echo Template::instance()->render('views/error.html');
