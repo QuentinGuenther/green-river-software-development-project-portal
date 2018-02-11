@@ -1,0 +1,24 @@
+.gr-nav {
+	background-color: #2c882b;
+	color: #ffffff;
+	padding: 0.5rem 3rem;
+	width: 100%;
+}
+
+.gr-logo {
+	height: 3rem;
+}
+
+.nav-text {
+	color: #ffffff;
+}
+
+.logout {
+	background-color: #ffffff;
+	color: #2c882b;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #2c882b;
+}
