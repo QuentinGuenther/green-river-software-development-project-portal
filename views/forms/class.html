@@ -8,9 +8,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="./styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="./styles/form.css">
+
     <title>Green River Software Development Project Portal</title>
 </head>
 <body>
+    <include href="./views/nav.html">
     <div class="container">
         <form action='./' method="POST">
             <div class="row">
@@ -85,7 +91,7 @@
                 </div>
             </div>
             <br>
-            <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+            <input type="submit" class="btn gr-btn" name="submit" value="Submit">
         </form>
         <hr>
     </div>
