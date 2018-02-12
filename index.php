@@ -49,7 +49,37 @@
         echo Template::instance()->render('views/forms/project_info.html');
     });
 
-    $f3->route('GET /new-class', function() {
+    $f3->route('GET|POST /new-class', function($f3) {
+
+        if(isset($_POST['submit'])) {
+            include('models/new-class-validation');
+
+            $errors = array();
+
+            if(!validCourseId($_POST['courseID']))
+                $errors['courseID'] = 'Invalid course id: must be a 4 digit number';
+
+            if(!validQuarter($_POST['quarter']))
+                $errors['quarter'] = 'Invalid course quarter';
+
+            if(!validDate($_POST['year'])) 
+                $errors['year'] = "Invalid year: must be ".date('Y')." or greater";
+
+            $f3->set('courseID', $_POST['courseID']);
+            $f3->set('quarter', $_POST['quarter']);
+            $f3->set('year', $_POST['year']);
+
+            if(empty($errors)) {
+                $_SESSION['courseID'] = $_POST['courseID'];
+                $_SESSION['quarter'] = $_POST['quarter'];
+                $_SESSION['year'] = $_POST['year'];
+
+
+                $f3->reroute('/'); // TODO: change route 
+            }
+        }
+
+
         echo Template::instance()->render('views/forms/class.html');
     });
 
