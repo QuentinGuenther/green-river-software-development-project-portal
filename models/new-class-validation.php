@@ -7,7 +7,7 @@
 	function validQuarter($quarter) {
 		$validQuarters = array("fall", "winter", "spring", "summer");
 
-		return is_array($quarter, $validQuarters);
+		return in_array($quarter, $validQuarters);
 	}
 
 	function validYear($year) {
