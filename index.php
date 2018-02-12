@@ -45,7 +45,9 @@
         echo Template::instance()->render('views/login.html');
     });
 
-    $f3->route('GET /new-project', function() {
+    $f3->route('GET /new-project', function($f3) {
+        require('models/address-helpers.php');
+        $f3->set('states', $states);
         echo Template::instance()->render('views/forms/project_info.html');
     });
 

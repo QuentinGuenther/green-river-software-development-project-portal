@@ -59,12 +59,19 @@
                             <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group">
-                            <label>Country</label>
-                            <select class="form-control"></select>
-                        </div>
-                        <div class="form-group">
-                            <label>State/Provance/Region</label>
-                            <input type="text" class="form-control" name="" value="Washington">
+                            <label>State</label>
+                            <select class="custom-select">
+                                <repeat group="{{ @states }}" key="{{ @key }}" value="{{ @value }}">
+                                    <check if="{{ @key == 'WA' }}">
+                                        <true>
+                                            <option value="{{ @key }}" selected>{{ @value }}</option>
+                                        </true>
+                                        <false>
+                                            <option value="{{ @key }}">{{ @value }}</option>
+                                        </false>
+                                    </check>
+                                </repeat>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>City</label>
