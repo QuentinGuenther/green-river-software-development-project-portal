@@ -21,7 +21,27 @@
     });
 
     // Login route
-    $f3->route('GET /login', function() {
+    $f3->route('GET|POST /login', function($f3) {
+
+        if(isset($_POST['submit'])) {
+            $errors = array();
+
+            include('models/login-validation.php');
+
+            if(!validEmail($_POST['username']))
+                $errors['username'] = 'Username must be a valid email';
+
+            $f3->set('username', $_POST['username']); 
+            $f3->set('errors', $errors);
+
+            if(empty($errors)) {
+                $_SESSION['username'] = $_POST['username'];
+
+                $f3->reroute('/new-project');
+            }
+        }
+        
+
         echo Template::instance()->render('views/login.html');
     });
 

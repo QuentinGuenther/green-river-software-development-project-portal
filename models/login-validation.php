@@ -1,6 +1,7 @@
 <?php
 
 	function validEmail($email) {
+		// TODO: check email against valid emails from database
 		return filter_var($email, FILTER_VALIDATE_EMAIL);
 	}
 

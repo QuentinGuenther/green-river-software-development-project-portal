@@ -14,17 +14,20 @@
 </head>
 <body>
     <div id="login-content">
-        <form action='./' method="POST">
+        <form action='#' method="POST">
             <div class="form-group">
                 <label for="username"><strong>Username</strong></label>
                 <input type="email" class="form-control" id="username" name="username" />
+                <check if="{{ @errors['username'] }}">
+                    <p class="text-danger"><b>{{ @errors['username'] }}</b></p>
+                </check>
             </div>
             <div class="form-group">
                 <label for="password"><strong>Password</strong></label>
                 <input type="password" class="form-control" id="password" name="password" />
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-green" value="login" />
+                <input type="submit" class="btn btn-green" name="submit" value="login" />
             </div>
             
         </form>
