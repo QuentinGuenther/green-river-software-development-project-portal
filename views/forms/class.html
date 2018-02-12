@@ -18,7 +18,7 @@
 <body>
     <include href="./views/nav.html">
     <div class="container">
-        <form action='./' method="POST">
+        <form action='#' method="POST">
             <div class="row">
                 <div class="col-12">
                     <fieldset>
@@ -26,21 +26,36 @@
                         <div class="row">
                             <div class="form-group col-md-5 col-lg-2">
                                 <label for="courseID">Course ID</label>
-                                <input type="text" class="form-control" name="courseID" id="courseID">
+                                <input type="text" class="form-control" name="courseID" id="courseID" value="{{ @courseID }}">
+                                <check if="{{ @errors['courseID'] }}">
+                                    <p class="text-danger"><b>{{ @errors['courseID'] }}</b></p>
+                                </check>
                             </div>
                             <div class="form-group col-md-4 col-lg-3">
                                 <label for="quarter">Quarter</label>
                                 <select class="form-control" name="quarter" id="quarter">
                                     <option>--Select--</option>
-                                    <option value="fall">Fall</option>
-                                    <option value="winter">Winter</option>
-                                    <option value="spring">Spring</option>
-                                    <option value="summer">Summer</option>
+                                    <repeat group="{{ @quarters }}" value="{{ @quarterName }}">
+                                        <check if="@quarterName == @quarter">
+                                            <true>
+                                                <option value="{{ @quarterName }}" selected>{{ ucfirst(@quarterName) }}</option>
+                                            </true>
+                                            <false>
+                                                <option value="{{ @quarterName }}">{{ ucfirst(@quarterName) }}</option>
+                                            </false>
+                                        </check>
+                                    </repeat>
                                 </select>
+                                <check if="{{ @errors['quarter'] }}">
+                                    <p class="text-danger"><b>{{ @errors['quarter'] }}</b></p>
+                                </check>
                             </div>
                             <div class="form-group col-md-3 col-lg-2">
                                 <label for="year">Year</label>
-                                <input type="number" class="form-control" min="2000" max="{{ date('Y') + 1 }}" step="1" value="{{ date('Y') }}" name="year" id="name">
+                                <input type="number" class="form-control" min="2000" max="{{ date('Y') + 1 }}" step="1" value="{{ date('Y') }}" name="year" id="name" value="{{ @year }}">
+                                <check if="{{ @errors['year'] }}">
+                                    <p class="text-danger"><b>{{ @errors['year'] }}</b></p>
+                                </check>
                             </div>
                             <div class="form-group col-md-12 col-lg-5">
                                 <label for="instructor">Instructor</label>
@@ -55,15 +70,24 @@
                                 <legend>Links</legend>
                                 <div class="form-group">
                                     <label for="github">Github</label>
-                                    <input type="url" class="form-control" name="github" id="github">
+                                    <input type="url" class="form-control" name="github" id="github" value="{{ @github }}">
+                                    <check if="{{ @errors['github'] }}">
+                                        <p class="text-danger"><b>{{ @errors['github'] }}</b></p>
+                                    </check>
                                 </div>
                                 <div class="form-group">
                                     <label for="trello">Trello</label>
-                                    <input type="url" class="form-control" name="trello" id="trello">
+                                    <input type="url" class="form-control" name="trello" id="trello" value="{{ @trello }}">
+                                    <check if="{{ @errors['trello'] }}">
+                                        <p class="text-danger"><b>{{ @errors['trello'] }}</b></p>
+                                    </check>
                                 </div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
-                                    <input type="url" class="form-control" name="url" id="url">
+                                    <input type="url" class="form-control" name="url" id="url" value="{{ @url }}">
+                                    <check if="{{ @errors['url'] }}">
+                                        <p class="text-danger"><b>{{ @errors['url'] }}</b></p>
+                                    </check>
                                 </div>
                             </fieldset>
                         </div>
