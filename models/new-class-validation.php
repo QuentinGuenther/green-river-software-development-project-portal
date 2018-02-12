@@ -13,3 +13,7 @@
 	function validYear($year) {
 		return $year >= date('Y');
 	}
+
+	function validUrl($url) {
+		return filter_var($url, FILTER_VALIDATE_URL);
+	}
