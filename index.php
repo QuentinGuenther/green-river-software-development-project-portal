@@ -8,6 +8,9 @@
     // Require autoload
     require_once('vendor/autoload.php');
 
+    // Require validations
+    require_once('models/validations.php');
+
     // Create fat-free instance
     $f3 = Base::instance();
 
@@ -41,13 +44,37 @@
             }
         }
         
-
         echo Template::instance()->render('views/login.html');
     });
 
-    $f3->route('GET /new-project', function($f3) {
+    $f3->route('GET|POST /new-project', function($f3) {
         require('models/address-helpers.php');
         $f3->set('states', $states);
+
+        if(isset($_POST['submit'])) {
+            $errors = array();
+
+            if(empty($_POST['projectTitle']))
+                $errors['title'] = 'Please enter a project title';
+            if(empty($_POST['projectDescription']))
+                $errors['description'] = 'Please enter a brief description';
+            if(empty($_POST['companyName']))
+                $errors['company'] = 'Please enter a company name';
+            if(!validUrl($_POST['companyWebsite']))
+                $errors['website'] = 'Please enter a valid url';
+
+            $f3->set('title', $_POST['projectTitle']);
+            $f3->set('description', $_POST['projectDescription']);
+            $f3->set('company', $_POST['companyName']);
+            $f3->set('website', $_POST['companyWebsite']);
+            $f3->set('errors', $errors);
+
+            if(empty($errors)) {
+
+                $f3->reroute('/'); // TODO: change route 
+            }
+        }
+
         echo Template::instance()->render('views/forms/project_info.html');
     });
 
@@ -57,8 +84,7 @@
         $f3->set("quarters", $quarters);
 
         if(isset($_POST['submit'])) {
-            include('models/new-class-validation.php');
-
+            
             $errors = array();
 
             if(!validCourseId($_POST['courseID']))

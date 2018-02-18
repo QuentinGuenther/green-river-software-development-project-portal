@@ -18,18 +18,24 @@
 <body>
     <include href="./views/nav.html">
     <div class="container">
-        <form action='./' method="POST">
+        <form action='#' method="POST">
             <div class="row">
                 <div class="col-12">
                     <fieldset>
                         <legend>Project Information</legend>
                         <div class="form-group">
-                            <label>Title</label>
-                            <input type="text" class="form-control" name="projectTitle" id="projectTitle">
+                            <label>Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="projectTitle" id="projectTitle" value="{{ @title }}">
+                            <check if="{{ @errors['title'] }}">
+                                <p class="text-danger"><b>{{ @errors['title'] }}</b></p>
+                            </check>
                         </div>
                         <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name="projectDescription" id="projectDescription"></textarea>
+                            <label>Description <span class="text-danger">*</span></label>
+                            <textarea class="form-control" name="projectDescription" id="projectDescription">{{ @description }}</textarea>
+                            <check if="{{ @errors['description'] }}">
+                                <p class="text-danger"><b>{{ @errors['description'] }}</b></p>
+                            </check>
                         </div>
                     </fieldset>
                 </div>
@@ -40,12 +46,18 @@
                     <fieldset>
                         <legend>Client Information</legend>
                         <div class="form-group">
-                            <label>Company Name</label>
-                            <input type="text" class="form-control" name="companyName" id="companyName">
+                            <label>Company Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="companyName" id="companyName" value="{{ @company }}">
+                            <check if="{{ @errors['company'] }}">
+                                <p class="text-danger"><b>{{ @errors['company'] }}</b></p>
+                            </check>
                         </div>
                         <div class="form-group">
-                            <label>Website</label>
-                            <input type="url" class="form-control" name="companyWebsite" id="companyWebsite">
+                            <label>Website <span class="text-danger">*</span></label>
+                            <input type="url" class="form-control" name="companyWebsite" id="companyWebsite" value="{{ @website }}">
+                            <check if="{{ @errors['website'] }}">
+                                <p class="text-danger"><b>{{ @errors['website'] }}</b></p>
+                            </check>
                         </div>
                     </fieldset>
                 </div>
@@ -59,19 +71,12 @@
                             <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group">
-                            <label>State</label>
-                            <select class="custom-select">
-                                <repeat group="{{ @states }}" key="{{ @key }}" value="{{ @value }}">
-                                    <check if="{{ @key == 'WA' }}">
-                                        <true>
-                                            <option value="{{ @key }}" selected>{{ @value }}</option>
-                                        </true>
-                                        <false>
-                                            <option value="{{ @key }}">{{ @value }}</option>
-                                        </false>
-                                    </check>
-                                </repeat>
-                            </select>
+                            <label>Country</label>
+                            <select class="form-control"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>State/Provance/Region</label>
+                            <input type="text" class="form-control" name="" value="Washington">
                         </div>
                         <div class="form-group">
                             <label>City</label>

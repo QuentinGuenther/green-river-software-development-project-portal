@@ -1,4 +1,13 @@
-<?php
+<?php 
+
+	function validEmail($email) {
+		// TODO: check email against valid emails from database
+		return filter_var($email, FILTER_VALIDATE_EMAIL);
+	}
+
+	function validPassword() {
+		// TODO: check password against valid passwords from database
+	}
 
 	function validCourseID($courseID) {
 		return ctype_alnum( (int) $courseID) && strlen($courseID) == 4;
@@ -32,7 +41,6 @@
 		return false;
 	}
 	
-
 	function validUrl($url) {
 		return filter_var($url, FILTER_VALIDATE_URL);
 	}
