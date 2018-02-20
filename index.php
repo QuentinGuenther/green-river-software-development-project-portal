@@ -71,6 +71,11 @@
 
             if(empty($errors)) {
 
+                $_SESSION['title', $_POST['projectTitle'];
+                $_SESSION['description', $_POST['projectDescription'];
+                $_SESSION['comnpany', $_POST['companyName'];
+                $_SESSION['website', $_POST['companyWebsite'];
+
                 $f3->reroute('/'); // TODO: change route 
             }
         }
@@ -127,6 +132,9 @@
                 $_SESSION['github'] = $_POST['github'];
                 $_SESSION['trello'] = $_POST['trello'];
                 $_SESSION['url'] = $_POST['url'];
+                $_SESSION['username'] = $_POST['username'];
+                $_SESSION['password'] = $_POST['password'];
+                $_SESSION['notes'] = $_POST['notes'];
 
                 $f3->reroute('/'); // TODO: change route 
             }
