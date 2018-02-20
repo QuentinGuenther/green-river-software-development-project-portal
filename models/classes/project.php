@@ -31,7 +31,7 @@
 
 		/**
 		 * Get the title of the project.
-		 * @return string The title of the project;
+		 * @return string The title of the project.
 		 */
 		public function getProjectTitle()
 		{
@@ -50,7 +50,7 @@
 
 		/**
 		 * Get the description of the project.
-		 * @return string The description of the project;
+		 * @return string The description of the project.
 		 */
 		public function getDescription()
 		{
@@ -69,7 +69,7 @@
 
 		/**
 		 * Get the status of the project.
-		 * @return string The status of the project;
+		 * @return string The status of the project.
 		 */
 		public function getStatus()
 		{
@@ -88,7 +88,7 @@
 
 		/**
 		 * Get the client for the project.
-		 * @return Client The client for the project;
+		 * @return Client The client for the project.
 		 */
 		public function getClient()
 		{
