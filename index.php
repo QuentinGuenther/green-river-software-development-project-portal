@@ -71,10 +71,10 @@
 
             if(empty($errors)) {
 
-                $_SESSION['title', $_POST['projectTitle'];
-                $_SESSION['description', $_POST['projectDescription'];
-                $_SESSION['comnpany', $_POST['companyName'];
-                $_SESSION['website', $_POST['companyWebsite'];
+                $_SESSION['title'] = $_POST['projectTitle'];
+                $_SESSION['description'] = $_POST['projectDescription'];
+                $_SESSION['comnpany'] = $_POST['companyName'];
+                $_SESSION['website'] = $_POST['companyWebsite'];
 
                 $f3->reroute('/'); // TODO: change route 
             }
