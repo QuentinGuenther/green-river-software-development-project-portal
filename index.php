@@ -88,7 +88,7 @@
             $errors = array();
 
             if(!validCourseId($_POST['courseID']))
-                $errors['courseID'] = 'Invalid course id: must be a 4 digit number';
+                $errors['courseID'] = 'Must be a 4 digit number';
 
             if(!validQuarter($_POST['quarter']))
                 $errors['quarter'] = 'Invalid course quarter';
@@ -105,12 +105,19 @@
             if(!validUrl($_POST['url']))
                 $errors['url'] = "Not a valid url";
 
+            if(empty($_POST['instructor']))
+                $errors['instructor'] = "Please enter an instructor for this class";
+
             $f3->set('courseID', $_POST['courseID']);
             $f3->set('quarter', $_POST['quarter']);
             $f3->set('year', $_POST['year']);
             $f3->set('github', $_POST['github']);
             $f3->set('trello', $_POST['trello']);
             $f3->set('url', $_POST['url']);
+            $f3->set('instructor', $_POST['instructor']);
+            $f3->set('username', $_POST['username']);
+            $f3->set('password', $_POST['password']);
+            $f3->set('notes', $_POST['notes']);
             $f3->set('errors', $errors);
 
             if(empty($errors)) {
@@ -124,7 +131,6 @@
                 $f3->reroute('/'); // TODO: change route 
             }
         }
-
 
         echo Template::instance()->render('views/forms/class.html');
     });
