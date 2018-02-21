@@ -152,6 +152,10 @@
         echo Template::instance()->render('views/summary_pages/project_summary.html');
     });
 
+    $f3->route('GET /course-summary', function() {
+        echo Template::instance()->render('views/summary_pages/course_summary.html');
+    });
+
     // Error page
     $f3->set('ONERROR', function($f3) {
         echo Template::instance()->render('views/error.html');
