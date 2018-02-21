@@ -54,7 +54,7 @@
 		 */
 		public function setCompanyName($companyName)
 		{
-			$this->companyName = $companyName
+			$this->companyName = $companyName;
 		}
 
 		/**
@@ -111,7 +111,7 @@
 		 */
 		public function setState($state)
 		{
-			$this->state = $state
+			$this->state = $state;
 		}
 
 		/**
