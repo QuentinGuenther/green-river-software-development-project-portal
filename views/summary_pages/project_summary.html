@@ -12,13 +12,112 @@
 
     <link rel="stylesheet" type="text/css" href="./styles/nav.css">
     <link rel="stylesheet" type="text/css" href="./styles/form.css">
+    <link rel="stylesheet" type="text/css" href="./styles/state.css">
 
     <title>Green River Software Development Project Portal</title>
 </head>
 <body>
     <include href="./views/nav.html">
     <div class="container">
-        
+        <!-- This is a template for the project summary -->
+        <!-- If you are viewing this, then you are on a development file! -->
+        <!-- This is phony data... -->
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-3 text-center">Project Title</h1>
+                <hr>
+            </div>
+            <div class="col-12">
+                <!-- Project Description -->
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <hr>
+            </div>  
+        </div>
+        <p class="text-right">
+            <span>Status: <strong class="active">Active</strong></span> &nbsp;
+            <a class="btn gr-btn" href="#" role="button">Edit Project Information</a>
+        </p>
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <h2 class="text-center">Organization</h2>
+                <table class="table table-sm">
+                    <tbody>
+                        <tr>
+                            <th>Company</th>
+                            <td class="lead">CompanyName</td>
+                        </tr>
+                        <tr>
+                            <th>Website</th>
+                            <td><a href="company.com">company.com</a></td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>123 st. Auburn, WA, 98001</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+            <div class="col-lg-5">
+                <h2 class="text-center">Contact</h2>
+                <table class="table table-sm">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td class="lead">John Doe</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>Sr. Project Manager II</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td><a href="mailto:johndoe@email.com" target="_top">johndoe@email.com</a></td>
+                        </tr>
+                        <tr>
+                            <th>Phone Number</th>
+                            <td>(555) 555-555</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Course List</h2>
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Course ID</th>
+                            <th scope="col">Quarter</th>
+                            <th scope="col">Instructor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>IT 328</td>
+                            <td>WINTER 2018</td>
+                            <td>John Doe</td>
+                        </tr>
+                        <tr>
+                            <td>IT 328</td>
+                            <td>WINTER 2018</td>
+                            <td>John Doe</td>
+                        </tr>
+                        <tr>
+                            <td>IT 328</td>
+                            <td>WINTER 2018</td>
+                            <td>John Doe</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

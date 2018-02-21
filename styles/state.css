@@ -1,0 +1,15 @@
+.active {
+	color: #2c882b;
+}
+
+.pending {
+	color: #2b2c88;
+}
+
+.maintenance {
+	color: #882b2c;
+}
+
+.retired {
+	color: #4a4a4a;
+}
