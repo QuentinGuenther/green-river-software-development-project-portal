@@ -126,15 +126,20 @@
             $f3->set('errors', $errors);
 
             if(empty($errors)) {
-                $_SESSION['courseID'] = $_POST['courseID'];
-                $_SESSION['quarter'] = $_POST['quarter'];
-                $_SESSION['year'] = $_POST['year'];
-                $_SESSION['github'] = $_POST['github'];
-                $_SESSION['trello'] = $_POST['trello'];
-                $_SESSION['url'] = $_POST['url'];
-                $_SESSION['username'] = $_POST['username'];
-                $_SESSION['password'] = $_POST['password'];
-                $_SESSION['notes'] = $_POST['notes'];
+
+                $course = new Course($_POST['courseID'],
+                                    $_POST['quarter'],
+                                    $_POST['year'],
+                                    $_POST['instructor']);
+
+                $course->setGithub($_POST['github']);
+                $course->setTrello($_POST['trello']);
+                $course->setUrl($_POST['url']);
+                $course->setUsername($_POST['username']);
+                $course->setPasswowrd($_POST['password']);
+                $course->setInstructorNotes($_POST['notes']);
+
+                $_SESSION['course'] = $course;
 
                 $f3->reroute('/'); // TODO: change route 
             }

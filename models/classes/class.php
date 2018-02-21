@@ -1,13 +1,13 @@
 <?php
 
 	/**
-	 * Class that represents a class (school)
+	 * Class that represents a course
 	 * 
 	 * @author NathanCorbin
 	 * @copyright 2018
 	 * @version 1.0
 	 */
-	class Class extends Project
+	class Course extends Project
 	{
 		// course information
 		private $_courseId;
