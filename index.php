@@ -56,20 +56,54 @@
 
             if(empty($_POST['projectTitle']))
                 $errors['title'] = 'Please enter a project title';
+
             if(empty($_POST['projectDescription']))
                 $errors['description'] = 'Please enter a brief description';
+
             if(empty($_POST['companyName']))
                 $errors['company'] = 'Please enter a company name';
+
             if(!validUrl($_POST['companyWebsite']))
                 $errors['website'] = 'Please enter a valid url';
 
+            if(empty($_POST['address']))
+                $errors['address'] = 'Please enter an address';
+
+            if(!validZip($_POST['zipcode']))
+                $errors['zipcode'] = 'Please enter a valid zip';
+
+            if(empty($_POST['city']))
+                $errors['city'] = 'Please enter a city';
+
+            if(empty($_POST['clientName']))
+                $errors['clientName'] = 'Please enter the client\'s name';
+
+            if(empty($_POST['clientJobTitle']))
+                $errors['clientJobTitle'] = 'Please enter client\'s job title';
+
+            if(!validEmail($_POST['clientEmail']))
+                $errors['clientEmail'] = 'Please enter a valid client email';
+
+            if(!validPhone($_POST['clientPhoneNumber']))
+                $errors['clientPhone'] = 'Invalid format, must be: 123-4567-8910';
+            
             $f3->set('title', $_POST['projectTitle']);
             $f3->set('description', $_POST['projectDescription']);
             $f3->set('company', $_POST['companyName']);
             $f3->set('website', $_POST['companyWebsite']);
+            $f3->set('address', $_POST['address']);
+            $f3->set('zipcode', $_POST['zipcode']);
+            $f3->set('city', $_POST['city']);
+            $f3->set('clientName', $_POST['clientName']);
+            $f3->set('clientJobTitle', $_POST['clientJobTitle']);
+            $f3->set('clientEmail', $_POST['clientEmail']);
+            $f3->set('clientPhone', $_POST['clientPhoneNumber']);
+
             $f3->set('errors', $errors);
 
             if(empty($errors)) {
+
+                //$client = new Client();
 
                 $_SESSION['title'] = $_POST['projectTitle'];
                 $_SESSION['description'] = $_POST['projectDescription'];

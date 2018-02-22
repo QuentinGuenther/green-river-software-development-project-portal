@@ -44,3 +44,12 @@
 	function validUrl($url) {
 		return filter_var($url, FILTER_VALIDATE_URL);
 	}
+
+	function validPhone($phone) {
+		return preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}/", $phone) ||
+				preg_match("/^[0-9]{10}/", $phone);
+	}
+
+	function validZip($zipcode) {
+		return preg_match("/[0-9]{5}/", $zipcode);
+	}
