@@ -68,32 +68,30 @@
                         <legend>Client Address</legend>
                         <div class="form-group">
                             <label>Address Line</label>
-                            <input type="text" class="form-control" name="address" value="{{ @address }}">
-                            <check if="{{ @errors['address'] }}">
-                                <p class="text-danger"><b>{{ @errors['address'] }}</b></p>
-                            </check>
+                            <input type="text" class="form-control" name="address">
                         </div>
                         <div class="form-group">
-                            <label>Country</label>
-                            <input type="text" class="form-control" value="United States">
-                        </div>
-                        <div class="form-group">
-                            <label>State/Provance/Region</label>
-                            <input type="text" class="form-control" name="state" value="Washington">
+                            <label>State</label>
+                            <select class="custom-select">
+                                <repeat group="{{ @states }}" key="{{ @key }}" value="{{ @value }}">
+                                    <check if="{{ @key == 'WA' }}">
+                                        <true>
+                                            <option value="{{ @key }}" selected>{{ @value }}</option>
+                                        </true>
+                                        <false>
+                                            <option value="{{ @key }}">{{ @value }}</option>
+                                        </false>
+                                    </check>
+                                </repeat>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>City</label>
-                            <input type="text" class="form-control" name="city" value="{{ @city }}">
-                            <check if="{{ @errors['city'] }}">
-                                <p class="text-danger"><b>{{ @errors['city'] }}</b></p>
-                            </check>
+                            <input type="text" class="form-control" name="city">
                         </div>
                         <div class="form-group">
                             <label>Postal Code</label>
-                            <input type="text" class="form-control" name="zipcode" value="{{ @zipcode }}">
-                            <check if="{{ @errors['zipcode'] }}">
-                                <p class="text-danger"><b>{{ @errors['zipcode'] }}</b></p>
-                            </check>
+                            <input type="text" class="form-control" name="zipcode">
                         </div>
                     </fieldset>
                 </div>
@@ -102,31 +100,19 @@
                         <legend>Contact</legend>
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" name="clientName" value="{{ @clientName }}">
-                            <check if="{{ @errors['clientName'] }}">
-                                <p class="text-danger"><b>{{ @errors['clientName'] }}</b></p>
-                            </check>
+                            <input type="text" class="form-control" name="clientName">
                         </div>
                         <div class="form-group">
                             <label>Job Title</label>
-                            <input type="text" class="form-control" name="clientJobTitle" value="{{ @clientJobTitle }}">
-                            <check if="{{ @errors['clientJobTitle'] }}">
-                                <p class="text-danger"><b>{{ @errors['clientJobTitle'] }}</b></p>
-                            </check>
+                            <input type="text" class="form-control" name="clientJobTitle">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" name="clientEmail" value="{{ @clientEmail }}">
-                            <check if="{{ @errors['clientEmail'] }}">
-                                <p class="text-danger"><b>{{ @errors['clientEmail'] }}</b></p>
-                            </check>
+                            <input type="email" class="form-control" name="clientEmail">
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="text" class="form-control" name="clientPhoneNumber" value="{{ @clientPhone }}">
-                            <check if="{{ @errors['clientPhone'] }}">
-                                <p class="text-danger"><b>{{ @errors['clientPhone'] }}</b></p>
-                            </check>
+                            <input type="text" class="form-control" name="clientPhoneNumber">
                         </div>
                     </fieldset>
                 </div>
