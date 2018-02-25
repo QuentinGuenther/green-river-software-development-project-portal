@@ -1,9 +1,11 @@
 <?php
     session_start();
+    //session_destroy();
 
     // Turn on error reporting
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    ini_set('display_errors', '1');
 
     // Require autoload
     require_once('vendor/autoload.php');
@@ -103,12 +105,19 @@
 
             if(empty($errors)) {
 
-                //$client = new Client();
+                $client = new Client($_POST['clientName'],
+                                    $_POST['clientJobTitle'],
+                                    $_POST['clientEmail'],
+                                    $_POST['clientPhoneNumber'],
+                                    $_POST['companyName'],
+                                    $_POST['companyWebsite'],
+                                    $_POST['address'],
+                                    $_POST['state'],
+                                    $_POST['city'],
+                                    $_POST['zipcode']);
 
-                $_SESSION['title'] = $_POST['projectTitle'];
-                $_SESSION['description'] = $_POST['projectDescription'];
-                $_SESSION['comnpany'] = $_POST['companyName'];
-                $_SESSION['website'] = $_POST['companyWebsite'];
+
+                //$_SESSION['client'] = $client;
 
                 $f3->reroute('/'); // TODO: change route 
             }
