@@ -33,9 +33,9 @@
 			$this->companyName = $companyName;
 			$this->website = $website;
 			$this->streetAddress = $streetAddress;
-			$this->state = state;
-			$this->city = city;
-			$this->postalCode = postalCode;
+			$this->state = $state;
+			$this->city = $city;
+			$this->postalCode = $postalCode;
 		}
 
 		/**

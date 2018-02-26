@@ -1,6 +1,6 @@
 <?php
     session_start();
-    //session_destroy();
+
 
     // Turn on error reporting
     ini_set('display_errors', 1);
@@ -117,7 +117,7 @@
                                     $_POST['zipcode']);
 
 
-                //$_SESSION['client'] = $client;
+                $_SESSION['client'] = serialize($client);
 
                 $f3->reroute('/'); // TODO: change route 
             }

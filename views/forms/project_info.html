@@ -75,7 +75,7 @@
                         </div>
                         <div class="form-group">
                             <label>State</label>
-                            <select class="custom-select" name="state">
+                            <select class="custom-select" name="state[]">
                                 <repeat group="{{ @states }}" key="{{ @key }}" value="{{ @value }}">
                                     <check if="{{ @key == 'WA' }}">
                                         <true>

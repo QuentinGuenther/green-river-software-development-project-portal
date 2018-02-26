@@ -123,6 +123,6 @@
 		 */
 		public function setPhoneNumber($phoneNumber)
 		{
-			$this->phoneNumber = phoneNumber;
+			$this->phoneNumber = $phoneNumber;
 		}
 	}
