@@ -49,6 +49,71 @@
         echo Template::instance()->render('views/login.html');
     });
 
+    $f3->route('GET|POST /new-class', function($f3) {
+
+        $quarters = array("fall", "winter", "spring", "summer");
+        $f3->set("quarters", $quarters);
+
+        if(isset($_POST['submit'])) {
+            
+            $errors = array();
+
+            if(!validCourseId($_POST['courseID']))
+                $errors['courseID'] = 'Must be a 4 digit number';
+
+            if(!validQuarter($_POST['quarter']))
+                $errors['quarter'] = 'Invalid course quarter';
+
+            if(!validDate($_POST['year'])) 
+                $errors['year'] = "Invalid year: must be ".date('Y')." or greater";
+
+            if(!validGithubUrl($_POST['github']))
+                $errors['github'] = "Not a github url";
+
+            if(!validTrelloUrl($_POST['trello']))
+                $errors['trello'] = "Not a trello url";
+
+            if(!validUrl($_POST['url']))
+                $errors['url'] = "Not a valid url";
+
+            if(empty($_POST['instructor']))
+                $errors['instructor'] = "Please enter an instructor for this class";
+
+            $f3->set('courseID', $_POST['courseID']);
+            $f3->set('quarter', $_POST['quarter']);
+            $f3->set('year', $_POST['year']);
+            $f3->set('github', $_POST['github']);
+            $f3->set('trello', $_POST['trello']);
+            $f3->set('url', $_POST['url']);
+            $f3->set('instructor', $_POST['instructor']);
+            $f3->set('username', $_POST['username']);
+            $f3->set('password', $_POST['password']);
+            $f3->set('notes', $_POST['notes']);
+            $f3->set('errors', $errors);
+
+            if(empty($errors)) {
+
+                $course = new Course($_POST['courseID'],
+                                    $_POST['quarter'],
+                                    $_POST['year'],
+                                    $_POST['instructor']);
+
+                $course->setGithub($_POST['github']);
+                $course->setTrello($_POST['trello']);
+                $course->setUrl($_POST['url']);
+                $course->setUsername($_POST['username']);
+                $course->setPassword($_POST['password']);
+                $course->setInstructorNotes($_POST['notes']);
+
+                $_SESSION['course'] = serialize($course);
+
+                $f3->reroute('/new-project'); 
+            }
+        }
+
+        echo Template::instance()->render('views/forms/class.html');
+    });
+
     $f3->route('GET|POST /new-project', function($f3) {
         require('models/address-helpers.php');
         $f3->set('states', $states);
@@ -105,6 +170,8 @@
 
             if(empty($errors)) {
 
+                $course = unserialize($_SESSION['course']);
+
                 $client = new Client($_POST['clientName'],
                                     $_POST['clientJobTitle'],
                                     $_POST['clientEmail'],
@@ -116,87 +183,47 @@
                                     $_POST['city'],
                                     $_POST['zipcode']);
 
+                $course->setProjectTitle($_POST['projectTitle']);
+                $course->setDescription($_POST['projectDescription']);
 
+                $_SESSION['course'] = serialize($course);
                 $_SESSION['client'] = serialize($client);
 
-                $f3->reroute('/'); // TODO: change route 
+                $f3->reroute('/project-summary'); // TODO: change route 
             }
         }
 
         echo Template::instance()->render('views/forms/project_info.html');
     });
 
-    $f3->route('GET|POST /new-class', function($f3) {
+    $f3->route('GET /project-summary', function($f3) {
 
-        $quarters = array("fall", "winter", "spring", "summer");
-        $f3->set("quarters", $quarters);
+        if(!empty($_SESSION['course']) && !empty($_SESSION['client'])) {
+            $course = unserialize($_SESSION['course']);
+            $client = unserialize($_SESSION['client']);
 
-        if(isset($_POST['submit'])) {
-            
-            $errors = array();
+            $f3->set('course', $course);
+            $f3->set('client', $client);
 
-            if(!validCourseId($_POST['courseID']))
-                $errors['courseID'] = 'Must be a 4 digit number';
-
-            if(!validQuarter($_POST['quarter']))
-                $errors['quarter'] = 'Invalid course quarter';
-
-            if(!validDate($_POST['year'])) 
-                $errors['year'] = "Invalid year: must be ".date('Y')." or greater";
-
-            if(!validGithubUrl($_POST['github']))
-                $errors['github'] = "Not a github url";
-
-            if(!validTrelloUrl($_POST['trello']))
-                $errors['trello'] = "Not a trello url";
-
-            if(!validUrl($_POST['url']))
-                $errors['url'] = "Not a valid url";
-
-            if(empty($_POST['instructor']))
-                $errors['instructor'] = "Please enter an instructor for this class";
-
-            $f3->set('courseID', $_POST['courseID']);
-            $f3->set('quarter', $_POST['quarter']);
-            $f3->set('year', $_POST['year']);
-            $f3->set('github', $_POST['github']);
-            $f3->set('trello', $_POST['trello']);
-            $f3->set('url', $_POST['url']);
-            $f3->set('instructor', $_POST['instructor']);
-            $f3->set('username', $_POST['username']);
-            $f3->set('password', $_POST['password']);
-            $f3->set('notes', $_POST['notes']);
-            $f3->set('errors', $errors);
-
-            if(empty($errors)) {
-
-                $course = new Course($_POST['courseID'],
-                                    $_POST['quarter'],
-                                    $_POST['year'],
-                                    $_POST['instructor']);
-
-                $course->setGithub($_POST['github']);
-                $course->setTrello($_POST['trello']);
-                $course->setUrl($_POST['url']);
-                $course->setUsername($_POST['username']);
-                $course->setPasswowrd($_POST['password']);
-                $course->setInstructorNotes($_POST['notes']);
-
-                $_SESSION['course'] = $course;
-
-                $f3->reroute('/'); // TODO: change route 
-            }
+            echo Template::instance()->render('views/summary_pages/project_summary.html');
+        } else {
+            $f3->reroute('/');
         }
-
-        echo Template::instance()->render('views/forms/class.html');
-    });
-
-    $f3->route('GET /project-summary', function() {
-        echo Template::instance()->render('views/summary_pages/project_summary.html');
     });
 
     $f3->route('GET /course-summary', function() {
-        echo Template::instance()->render('views/summary_pages/course_summary.html');
+
+        if(!empty($_SESSION['course']) && !empty($_SESSION['client'])) {
+            $course = unserialize($_SESSION['course']);
+            $client = unserialize($_SESSION['client']);
+
+            $f3->set('course', $course);
+            $f3->set('client', $client);
+
+            echo Template::instance()->render('views/summary_pages/course_summary.html');
+        } else {
+            $f3->reroute('/');
+        }
     });
 
     // Error page

@@ -62,7 +62,7 @@
 		 * @param string $description The description of the project.
 		 * @return null
 		 */
-		public function setDescritpion($description)
+		public function setDescription($description)
 		{
 			$this->description = $description;
 		}
