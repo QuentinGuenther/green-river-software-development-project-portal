@@ -106,11 +106,18 @@
 		 * @param $sql The SQL statement to run.
 		 * @return boolean Success.
 		 */
-		protected static function delete($sql)
+		protected static function delete($sql, $params)
 		{
 			global $dbh;
 
 			$statement = $dbh->prepare($sql);
+
+			foreach($params as $parameter => $value) {
+				foreach($value as $variable => $dataType) {
+					$statement->bindValue($parameter, $variable, $dataType);
+				}
+			}
+
 			$success = $statement->execute();
 
 			return $success;
