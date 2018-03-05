@@ -106,7 +106,7 @@
 		 * @param ClientCompany $company
 		 * @return ID of the matching row(s).
 		 */ 
-		private static function matchToRow($company)
+		protected static function matchToRow($company)
 		{
 			$sql = "SELECT companyID FROM Company WHERE name = :name AND website = :website AND address = :address AND city = :city AND state = :state AND zipCode = :zipCode";
 			$params = array(
