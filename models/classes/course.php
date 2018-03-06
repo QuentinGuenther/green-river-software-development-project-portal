@@ -7,7 +7,7 @@
 	 * @copyright 2018
 	 * @version 1.0
 	 */
-	class Course extends Project
+	class Course
 	{
 		// course information
 		private $_courseId;
@@ -27,12 +27,22 @@
 		// notes
 		private $_instructorNotes;
 
+		// project
+		private $_project;
+
 		/**
 		 * Creates a new class
 		 * @param int $courseId 4 digit course id code
 		 * @param string $quarter quarter for the class
 		 * @param int $year the year the class will be taken
 		 * @param string $instructor the instructors name
+		 * @param string $github the github url
+		 * @param string $trello the trello url
+		 * @param string $url the project url
+		 * @param string $username the username to login
+		 * @param string $password the password to login
+		 * @param string $instructorNotes the notes to set
+		 * @param Project project the project that the class belongs to
 		 */
 		public function __construct($courseId, 
 									$quarter, 
@@ -43,7 +53,8 @@
 									$url = null,
 									$username = null,
 									$password = null,
-									$instructorNotes = null)
+									$instructorNotes = null,
+									$project = null)
 		{
 			$this->courseId = $courseId;
 			$this->quarter = $quarter;
@@ -56,6 +67,7 @@
 			$this->username = $username;
 			$this->password = $password;
 			$this->instructorNotes = $instructorNotes;
+			$this->project = $project;
 		}
 
 		/**
@@ -153,6 +165,15 @@
 		}
 
 		/**
+		 * Gets the Project
+		 * @return string
+		 */
+		public function getProject()
+		{
+			return $this->project;
+		}
+
+		/**
 		 * Sets the courseId for the class
 		 * @param int $courseId new 4 digit course code
 		 */
@@ -226,7 +247,7 @@
 
 		/**
 		 * Sets the login username credential for the project
-		 * @param string $username the username to login
+		 * @param string $password the password to login
 		 */
 		public function setPassword($password)
 		{
@@ -235,10 +256,19 @@
 
 		/**
 		 * Sets the instructors notes
-		 * @param string $notes the notes to set
+		 * @param string $instructorNotes the notes to set
 		 */
 		public function setInstructorNotes($instructorNotes)
 		{
 			$this->instructorNotes = $instructorNotes;
+		}
+
+		/**
+		 * Sets the project
+		 * @param Project project the project that the class belongs to
+		 */
+		public function setInstructorNotes($project)
+		{
+			$this->project = $project;
 		}
 	}
