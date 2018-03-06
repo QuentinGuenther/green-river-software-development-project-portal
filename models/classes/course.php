@@ -34,12 +34,28 @@
 		 * @param int $year the year the class will be taken
 		 * @param string $instructor the instructors name
 		 */
-		public function __construct($courseId, $quarter, $year, $instructor)
+		public function __construct($courseId, 
+									$quarter, 
+									$year, 
+									$instructor,
+									$github = null,
+									$trello = null,
+									$url = null,
+									$username = null,
+									$password = null,
+									$instructorNotes = null)
 		{
 			$this->courseId = $courseId;
 			$this->quarter = $quarter;
 			$this->year = $year;
 			$this->instructor = $instructor;
+
+			$this->github = $github;
+			$this->trello = $trello;
+			$this->url = $url;
+			$this->username = $username;
+			$this->password = $password;
+			$this->instructorNotes = $instructorNotes;
 		}
 
 		/**
