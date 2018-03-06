@@ -267,7 +267,7 @@
 		 * Sets the project
 		 * @param Project project the project that the class belongs to
 		 */
-		public function setInstructorNotes($project)
+		public function setProject($project)
 		{
 			$this->project = $project;
 		}
