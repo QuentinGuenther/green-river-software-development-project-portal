@@ -48,18 +48,19 @@
 									$quarter, 
 									$year, 
 									$instructor,
+									$project,
 									$github = null,
 									$trello = null,
 									$url = null,
 									$username = null,
 									$password = null,
-									$instructorNotes = null,
-									$project = null)
+									$instructorNotes = null)
 		{
 			$this->courseId = $courseId;
 			$this->quarter = $quarter;
 			$this->year = $year;
 			$this->instructor = $instructor;
+			$this->project = $project;
 
 			$this->github = $github;
 			$this->trello = $trello;
@@ -67,7 +68,6 @@
 			$this->username = $username;
 			$this->password = $password;
 			$this->instructorNotes = $instructorNotes;
-			$this->project = $project;
 		}
 
 		/**
