@@ -1,12 +1,47 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="icon" href="/images/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/form.css">
+
+    <title>Green River Software Development Project Portal</title>
 </head>
 <body>
-    <h1>Home</h1>
-    <pre>
-    	{{ print_r($_SESSION) }}
-    </pre>
+    <include href="/views/nav.html">
+
+    <div class="container">
+    	<h1 class="pt-4 pb-2 text-center">Current Projects</h1>
+	    <table class="table table-hover">
+	    	<thead>
+	    		<tr>
+	    			<th>ID</th>
+	    			<th>Project Title</th>
+	    			<th>Project Description</th>
+	    			<th>Status</th>
+	    			<th>Client ID</th>
+	    			<th>Date Modified</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<repeat group="{{ @projects }}" value="{{ @project }}">
+	    			<td>{{ @project['projectID'] }}</td>
+	    			<td>{{ @project['title'] }}</td>
+	    			<td>{{ @project['description'] }}</td>
+	    			<td>{{ @project['status'] }}</td>
+	    			<td>{{ @project['clientID'] }}</td>
+	    			<td>{{ @project['dateModified'] }}</td>
+	    		</repeat>
+	    	</tbody>
+	    </table>
+    </div>
+    
 </body>
 </html>
