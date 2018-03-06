@@ -189,7 +189,7 @@
                 $_SESSION['course'] = serialize($course);
                 $_SESSION['client'] = serialize($client);
 
-                $f3->reroute('/project-summary'); // TODO: change route 
+                $f3->reroute('/course-summary'); // TODO: change route 
             }
         }
 
@@ -206,13 +206,15 @@
             $f3->set('client', $client);
 
             echo Template::instance()->render('views/summary_pages/project_summary.html');
-        } else {
+        }  else {
             $f3->reroute('/');
         }
+
+        
     });
 
-    $f3->route('GET /course-summary', function() {
-
+    $f3->route('GET /course-summary', function($f3) {
+       
         if(!empty($_SESSION['course']) && !empty($_SESSION['client'])) {
             $course = unserialize($_SESSION['course']);
             $client = unserialize($_SESSION['client']);

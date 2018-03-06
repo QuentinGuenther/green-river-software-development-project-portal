@@ -39,7 +39,7 @@
 			$this->courseId = $courseId;
 			$this->quarter = $quarter;
 			$this->year = $year;
-			$this->instructor;
+			$this->instructor = $instructor;
 		}
 
 		/**

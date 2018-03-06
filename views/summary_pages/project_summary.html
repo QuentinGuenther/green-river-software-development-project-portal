@@ -24,17 +24,12 @@
         <!-- This is phony data... -->
         <div class="row">
             <div class="col-12">
-                <h1 class="display-3 text-center">Project Title</h1>
+                <h1 class="display-3 text-center">{{ @course->getProjectTitle() }}</h1>
                 <hr>
             </div>
             <div class="col-12">
                 <!-- Project Description -->
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="lead">{{ @course->getDescription() }}</p>
                 <hr>
             </div>  
         </div>
@@ -49,15 +44,15 @@
                     <tbody>
                         <tr>
                             <th>Company</th>
-                            <td class="lead">CompanyName</td>
+                            <td class="lead">{{ @client->getCompanyName() }}</td>
                         </tr>
                         <tr>
                             <th>Website</th>
-                            <td><a href="company.com">company.com</a></td>
+                            <td><a href="{{ @client->getWebsite() }}">{{ @client->getWebsite() }}</a></td>
                         </tr>
                         <tr>
                             <th>Address</th>
-                            <td>123 st. Auburn, WA, 98001</td>
+                            <td>{{ @client->getStreetAddress() }}, {{ @client->getState() }}, {{ @client->getPostalCode() }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -68,19 +63,19 @@
                     <tbody>
                         <tr>
                             <th>Name</th>
-                            <td class="lead">John Doe</td>
+                            <td class="lead">{{ @client->getClientName() }}</td>
                         </tr>
                         <tr>
                             <th>Title</th>
-                            <td>Sr. Project Manager II</td>
+                            <td>{{ @client->getJobTitle() }}</td>
                         </tr>
                         <tr>
                             <th>Email</th>
-                            <td><a href="mailto:johndoe@email.com" target="_top">johndoe@email.com</a></td>
+                            <td><a href="mailto:{{ @client->getEmail() }}" target="_top">{{ @client->getEmail() }}</a></td>
                         </tr>
                         <tr>
                             <th>Phone Number</th>
-                            <td>(555) 555-555</td>
+                            <td>{{ @client->getPhoneNumber() }}</td>
                         </tr>
                     </tbody>
                 </table>

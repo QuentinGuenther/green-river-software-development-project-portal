@@ -11,23 +11,8 @@
 		private $_projectTitle;
 		private $_description;
 		private $_status; // Values: "pending", "active", "maintenance", "retired"
-		private $_client;
 
-		/**
-		 * Instantiate a new project.
-		 * @param string $projectTitle The title of the project.
-		 * @param string $description The description of the project.
-		 * @param string $status The status of the project.
-		 * @param Client $client an instance of a Client to the project.
-		 * @return null
-		 */
-		public function __construct($projectTitle, $description, $status, $client)
-		{
-			$this->projectTitle = $projectTitle;
-			$this->description = $description;
-			$this->status = $status;
-			$this->client = $client;
-		}
+
 
 		/**
 		 * Get the title of the project.
@@ -86,22 +71,4 @@
 			$this->status = $status;
 		}
 
-		/**
-		 * Get the client for the project.
-		 * @return Client The client for the project.
-		 */
-		public function getClient()
-		{
-			return $this->client;
-		}
-
-		/** 
-		 * Set the client for the project.
-		 * @param Client $client The client for the project.
-		 * @return null
-		 */
-		public function setClient($client)
-		{
-			$this->client = $client;
-		}
 	}

@@ -25,18 +25,15 @@
         <!-- This is phony data... -->
         <div class="row">
             <div class="col-12">
-                <h1 class="display-3 text-center">Project Title</h1>
-                <p class="text-center h3 gr-text">IT 328 | WINTER 2018 | John Doe</p>
+                <h1 class="display-3 text-center">{{ @course->getProjectTitle() }}</h1>
+                <p class="text-center h3 gr-text">{{ @course->getCourseID() }} | 
+                                                    {{ ucfirst(@course->getQuarter()) }} {{ @course->getYear() }} | 
+                                                    {{ @course->getInstructor() }}</p>
                 <hr>
             </div>
             <div class="col-12">
                 <!-- Instructor Notes -->
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="lead">{{ @course->getInstructorNotes() }}</p>
                 <hr>
             </div>  
         </div>
@@ -47,9 +44,9 @@
             <div class="col-lg-5">
                 <h2 class="text-center">Links</h2>
                 <div class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action text-center"><strong>Github</strong></a>
-                    <a href="#" class="list-group-item list-group-item-action text-center"><strong>Trello</strong></a>
-                    <a href="#" class="list-group-item list-group-item-action text-center"><strong>URL</strong></a>
+                    <a href="{{ @course->getGitHub() }}" class="list-group-item list-group-item-action text-center"><strong>Github</strong></a>
+                    <a href="{{ @course->getTrello() }}" class="list-group-item list-group-item-action text-center"><strong>Trello</strong></a>
+                    <a href="{{ @course->getUrl() }}" class="list-group-item list-group-item-action text-center"><strong>URL</strong></a>
                 </div>
                 <p class="mt-1">
                     <a class="btn gr-btn" data-toggle="collapse" href="#username_password" role="button" aria-expanded="false" aria-controls="username_password">Show/Hide Username and Password</a>

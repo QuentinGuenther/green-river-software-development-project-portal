@@ -71,7 +71,7 @@
 		 * @param string $website The website of the company.
 		 * @return null
 		 */
-		public function setWebiste($website)
+		public function setWebsite($website)
 		{
 			$this->website = $website;
 		}
