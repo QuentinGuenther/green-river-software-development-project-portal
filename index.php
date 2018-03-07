@@ -20,8 +20,15 @@
     $f3->set('DEBUG', 3);
 
     // Default route
-    $f3->route('GET|POST /', function() {
+    $f3->route('GET|POST /', function($f3) {
         $template = new Template();
+
+        $db = new ProjectDB();
+
+        $projects = $db->getAllProjects(); 
+
+        $f3->set("projects", $projects);
+
         echo $template->render('views/home.html');
     });
 
