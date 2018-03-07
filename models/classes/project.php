@@ -11,8 +11,19 @@
 		private $_projectTitle;
 		private $_description;
 		private $_status; // Values: "pending", "active", "maintenance", "retired"
+		private $_client;
 
+		public function __construct($projectTitle, $description, $status)
+		{
+			$this->projectTitle = $projectTitle;
+			$this->description = $description;
+			$this->status = $status;
+		}
 
+		public function getClient()
+		{
+			return $this->client;
+		}
 
 		/**
 		 * Get the title of the project.
@@ -69,6 +80,11 @@
 		public function setStatus($status)
 		{
 			$this->status = $status;
+		}
+
+		public function setClient($client)
+		{
+			$this->client = unserialize($client);
 		}
 
 	}

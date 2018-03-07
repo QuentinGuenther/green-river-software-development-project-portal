@@ -24,10 +24,9 @@
         $template = new Template();
 
         $db = new ProjectDB();
+        $projects = $db->getAllProjects();
 
-        $projects = $db->getAllProjects(); 
-
-        $f3->set("projects", $projects);
+        $f3->set('projects', $projects);
 
         echo $template->render('views/home.html');
     });
@@ -190,13 +189,22 @@
                                     $_POST['city'],
                                     $_POST['zipcode']);
 
-                $course->setProjectTitle($_POST['projectTitle']);
-                $course->setDescription($_POST['projectDescription']);
+                $project = new Project($_POST['projectTitle'],
+                                        $_POST['projectDescription'],
+                                        'Pending');
+
+                $project->setClient(serialize($client));
+                $course->setProject(serialize($project));
+
+                CourseDB::insertCourse($course);
+                //ClientDB::insertClient($client);
+                ProjectDB::insertProject($project);
 
                 $_SESSION['course'] = serialize($course);
                 $_SESSION['client'] = serialize($client);
+                $_SESSION['project'] = serialize($project);
 
-                $f3->reroute('/course-summary'); // TODO: change route 
+                $f3->reroute('/'); // TODO: change route 
             }
         }
 
@@ -216,8 +224,6 @@
         }  else {
             $f3->reroute('/');
         }
-
-        
     });
 
     $f3->route('GET /course-summary', function($f3) {

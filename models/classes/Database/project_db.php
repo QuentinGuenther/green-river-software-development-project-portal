@@ -58,7 +58,6 @@
 			new ClientDB();
 			$clientID = ClientDB::insertClient($project->getClient());
 
-			
 			$match = self::matchToRow($project);
 			if(!empty($match))
 				return $match[0]['projectID'];

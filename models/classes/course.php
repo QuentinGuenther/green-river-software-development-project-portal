@@ -48,7 +48,6 @@
 									$quarter, 
 									$year, 
 									$instructor,
-									$project,
 									$github = null,
 									$trello = null,
 									$url = null,
@@ -60,7 +59,6 @@
 			$this->quarter = $quarter;
 			$this->year = $year;
 			$this->instructor = $instructor;
-			$this->project = $project;
 
 			$this->github = $github;
 			$this->trello = $trello;
@@ -269,6 +267,6 @@
 		 */
 		public function setProject($project)
 		{
-			$this->project = $project;
+			$this->project = unserialize($project);
 		}
 	}
