@@ -194,7 +194,7 @@
                 new ProjectDB();
                 ProjectDB::insertProject($project);
 
-                $f3->reroute('/'); // TODO: change route 
+                $f3->reroute('/'); 
             }
         }
 
