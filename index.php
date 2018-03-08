@@ -21,6 +21,7 @@
 
     // Default route
     $f3->route('GET|POST /', function($f3) {
+        /*
         $template = new Template();
 
         $db = new ProjectDB();
@@ -29,11 +30,12 @@
         $f3->set('projects', $projects);
 
         echo $template->render('views/home.html');
+        */
     });
 
     // Login route
     $f3->route('GET|POST /login', function($f3) {
-
+        /*
         if(isset($_POST['submit'])) {
             $errors = array();
 
@@ -52,11 +54,11 @@
             }
         }
         
-        echo Template::instance()->render('views/login.html');
+        echo Template::instance()->render('views/login.html');*/
     });
 
     $f3->route('GET|POST /new-class', function($f3) {
-
+        /*
         $quarters = array("fall", "winter", "spring", "summer");
         $f3->set("quarters", $quarters);
 
@@ -118,6 +120,7 @@
         }
 
         echo Template::instance()->render('views/forms/class.html');
+        */
     });
 
     $f3->route('GET|POST /new-project', function($f3) {
@@ -175,9 +178,6 @@
             $f3->set('errors', $errors);
 
             if(empty($errors)) {
-
-                $course = unserialize($_SESSION['course']);
-
                 $client = new Client($_POST['clientName'],
                                     $_POST['clientJobTitle'],
                                     $_POST['clientEmail'],
@@ -185,24 +185,16 @@
                                     $_POST['companyName'],
                                     $_POST['companyWebsite'],
                                     $_POST['address'],
-                                    $_POST['state'],
+                                    $_POST['state'][0],
                                     $_POST['city'],
                                     $_POST['zipcode']);
 
                 $project = new Project($_POST['projectTitle'],
                                         $_POST['projectDescription'],
-                                        'Pending');
-
-                $project->setClient(serialize($client));
-                $course->setProject(serialize($project));
-
-                CourseDB::insertCourse($course);
-                //ClientDB::insertClient($client);
+                                        'pending',
+                                        $client);
+                new ProjectDB();
                 ProjectDB::insertProject($project);
-
-                $_SESSION['course'] = serialize($course);
-                $_SESSION['client'] = serialize($client);
-                $_SESSION['project'] = serialize($project);
 
                 $f3->reroute('/'); // TODO: change route 
             }
@@ -212,7 +204,7 @@
     });
 
     $f3->route('GET /project-summary', function($f3) {
-
+        /*
         if(!empty($_SESSION['course']) && !empty($_SESSION['client'])) {
             $course = unserialize($_SESSION['course']);
             $client = unserialize($_SESSION['client']);
@@ -223,11 +215,11 @@
             echo Template::instance()->render('views/summary_pages/project_summary.html');
         }  else {
             $f3->reroute('/');
-        }
+        }*/
     });
-
+    
     $f3->route('GET /course-summary', function($f3) {
-       
+       /*
         if(!empty($_SESSION['course']) && !empty($_SESSION['client'])) {
             $course = unserialize($_SESSION['course']);
             $client = unserialize($_SESSION['client']);
@@ -239,6 +231,7 @@
         } else {
             $f3->reroute('/');
         }
+        */
     });
 
     // Error page

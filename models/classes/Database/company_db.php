@@ -46,7 +46,7 @@
 		 * @return ID of company.
 		 */
 		public static function insertCompany($company)
-		{	
+		{			
 			$match = self::matchToRow($company);
 			if(!empty($match))
 				return $match[0]['companyID'];
@@ -60,7 +60,7 @@
 				':city' => array($company->getCity() => PDO::PARAM_STR),
 				':state' => array($company->getState() => PDO::PARAM_STR),
 				':zipCode' => array($company->getPostalCode() => PDO::PARAM_STR)
-			);		
+			);
 
 			return parent::insert($sql, $params);
 		}

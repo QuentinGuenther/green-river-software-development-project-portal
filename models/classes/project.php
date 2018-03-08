@@ -13,11 +13,12 @@
 		private $_status; // Values: "pending", "active", "maintenance", "retired"
 		private $_client;
 
-		public function __construct($projectTitle, $description, $status)
+		public function __construct($projectTitle, $description, $status, $client)
 		{
 			$this->projectTitle = $projectTitle;
 			$this->description = $description;
 			$this->status = $status;
+			$this->client = $client;
 		}
 
 		public function getClient()

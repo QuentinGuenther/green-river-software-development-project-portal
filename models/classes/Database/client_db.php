@@ -66,7 +66,7 @@
 
 			$match = self::matchToRow($client);
 			if(!empty($match))
-				return $match[0]['companyID'];
+				return $match[0]['clientID'];
 
 			$sql = "INSERT INTO Client(name, jobTitle, email, phoneNumber, companyID) VALUES (:name, :jobTitle, :email, :phoneNumber, :companyID)";
 			
@@ -75,7 +75,7 @@
 				':jobTitle' => array($client->getJobTitle() => PDO::PARAM_STR),
 				':email' => array($client->getEmail() => PDO::PARAM_STR),
 				':phoneNumber' => array($client->getPhoneNumber() => PDO::PARAM_STR),
-				':companyID' => array($companyID => PDO::PARAM_INT)
+				':companyID' => array(1 => PDO::PARAM_INT)
 			);		
 
 			return parent::insert($sql, $params);

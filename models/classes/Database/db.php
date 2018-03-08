@@ -8,7 +8,7 @@
 	 * Since this file contains sensitive information,
 	 * it should be stored outside of public_html.
 	 */	
-	require_once('/home/ncorbing/db-portal.php');
+	require_once('/home/qguenthe/db_config/GRSoftwareDevPortal_config.php');
 
 	/**
 	 * This class contains generic functions for REST functionallity.

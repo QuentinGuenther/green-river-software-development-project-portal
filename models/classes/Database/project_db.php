@@ -57,10 +57,11 @@
 		{
 			new ClientDB();
 			$clientID = ClientDB::insertClient($project->getClient());
-
+			
 			$match = self::matchToRow($project);
 			if(!empty($match))
 				return $match[0]['projectID'];
+			
 
 			$sql = "INSERT INTO Project(title, description, status, clientID) VALUES (:title, :description, :status, :clientID)";
 			
@@ -68,7 +69,7 @@
 				':title' => array($project->getProjectTitle() => PDO::PARAM_STR),
 				':description' => array($project->getDescription() => PDO::PARAM_STR),
 				':status' => array($project->getStatus() => PDO::PARAM_STR),
-				':clientID' => array($clientID => PDO::PARAM_INT)
+				':clientID' => array(1 => PDO::PARAM_INT)
 			);		
 
 			return parent::insert($sql, $params);
