@@ -36,22 +36,20 @@
 	    		</tr>
 	    	</thead>
 	    	<tbody>
-	    		
 	    		<repeat group="{{ @projects }}" value="{{ @project }}">
-	    			<tr>
-	    			<td>{{ @project['projectID'] }}</td>
-	    			<td>{{ @project['title'] }}</td>
-	    			<td>{{ @project['description'] }}</td>
-	    			<td>{{ @project['status'] }}</td>
-	    			<td>{{ @project['clientID'] }}</td>
-	    			<td>{{ @project['dateModified'] }}</td>
-
-	    		</tr>
+	    			<tr onclick="routeTo({{ @project['projectID'] }})">
+		    			<td>{{ @project['projectID'] }}</td>
+		    			<td>{{ @project['title'] }}</td>
+		    			<td>{{ @project['description'] }}</td>
+		    			<td>{{ @project['status'] }}</td>
+		    			<td>{{ @project['clientID'] }}</td>
+		    			<td>{{ @project['dateModified'] }}</td>
+	    			</tr>
 	    		</repeat>
-
 	    	</tbody>
 	    </table>
     </div>
     
+	<script src="./javascripts/route.js"></script>
 </body>
 </html>

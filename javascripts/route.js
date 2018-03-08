@@ -1,4 +1,6 @@
 function routeTo(id) {
-	var url = window.location.origin;
-	window.location.href = url + 'hang on okay?' + id;
+	var url = window.location.href += 'project-summary/' + id;
+	url = url.replace('//', '/');
+
+	window.location.href.replace(url);
 }
