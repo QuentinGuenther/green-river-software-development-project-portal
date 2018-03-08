@@ -75,7 +75,7 @@
 				':jobTitle' => array($client->getJobTitle() => PDO::PARAM_STR),
 				':email' => array($client->getEmail() => PDO::PARAM_STR),
 				':phoneNumber' => array($client->getPhoneNumber() => PDO::PARAM_STR),
-				':companyID' => array(1 => PDO::PARAM_INT)
+				':companyID' => array($companyID => PDO::PARAM_INT)
 			);		
 
 			return parent::insert($sql, $params);
