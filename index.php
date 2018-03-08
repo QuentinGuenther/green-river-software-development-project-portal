@@ -38,7 +38,7 @@
         if(isset($_POST['submit'])) {
             $errors = array();
 
-            include('models/login-validation.php');
+            //include('models/login-validation.php');
 
             if(!validEmail($_POST['username']))
                 $errors['username'] = 'Username must be a valid email';
@@ -49,7 +49,7 @@
             if(empty($errors)) {
                 $_SESSION['username'] = $_POST['username'];
 
-                $f3->reroute('/new-project');
+                $f3->reroute('/');
             }
         }
         
@@ -192,6 +192,7 @@
                                         $client);
 
                 new ProjectDB();
+
                 ProjectDB::insertProject($project);
 
                 $f3->reroute('/'); 
@@ -214,19 +215,15 @@
         echo Template::instance()->render('views/summary_pages/project_summary.html');
     });
     
-    $f3->route('GET /course-summary', function($f3) {
+    $f3->route('GET /course-summary/@id', function($f3, $params) {
        
-        if(!empty($_SESSION['course']) && !empty($_SESSION['client'])) {
-            $course = unserialize($_SESSION['course']);
-            $client = unserialize($_SESSION['client']);
+        new CourseDB();
 
-            $f3->set('course', $course);
-            $f3->set('client', $client);
+        $course = CourseDB::getCourse($params['id']);
 
-            echo Template::instance()->render('views/summary_pages/course_summary.html');
-        } else {
-            $f3->reroute('/');
-        }
+        $f3->set('course', $course);
+
+        echo Template::instance()->render('views/summary_pages/course_summary.html');
         
     });
 

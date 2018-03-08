@@ -35,7 +35,7 @@
             </div>  
         </div>
         <p class="text-right">
-            <span>Status: <strong class="active">Active</strong></span> &nbsp;
+            <span>Status: <strong class="{{ @project->getStatus() }}">{{ ucfirst(@project->getStatus()) }}</strong></span> &nbsp;
             <a class="btn gr-btn" href="#" role="button">Edit Project Information</a>
         </p>
         <div class="row justify-content-between">
