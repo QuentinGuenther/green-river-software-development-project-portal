@@ -10,26 +10,27 @@
 
     <link rel="icon" href="images/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="./styles/nav.css">
-    <link rel="stylesheet" type="text/css" href="./styles/form.css">
-    <link rel="stylesheet" type="text/css" href="./styles/state.css">
+    <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/form.css">
+    <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/state.css">
 
     <title>Green River Software Development Project Portal</title>
 </head>
 <body>
     <include href="./views/nav.html">
+
     <div class="container">
         <!-- This is a template for the project summary -->
         <!-- If you are viewing this, then you are on a development file! -->
         <!-- This is phony data... -->
         <div class="row">
             <div class="col-12">
-                <h1 class="display-3 text-center">{{ @course->getProjectTitle() }}</h1>
+                <h1 class="display-3 text-center">{{ @project->getProjectTitle() }}</h1>
                 <hr>
             </div>
             <div class="col-12">
                 <!-- Project Description -->
-                <p class="lead">{{ @course->getDescription() }}</p>
+                <p class="lead">{{ @project->getDescription() }}</p>
                 <hr>
             </div>  
         </div>

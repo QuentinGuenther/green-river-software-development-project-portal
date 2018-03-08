@@ -32,8 +32,8 @@
 			$company = new ClientCompany($result['name'],
 										$result['website'],
 										$result['address'],
-										$result['city'],
 										$result['state'],
+										$result['city'],
 										$result['zipCode']);
 
 			return $company;

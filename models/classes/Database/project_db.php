@@ -69,7 +69,7 @@
 				':title' => array($project->getProjectTitle() => PDO::PARAM_STR),
 				':description' => array($project->getDescription() => PDO::PARAM_STR),
 				':status' => array($project->getStatus() => PDO::PARAM_STR),
-				':clientID' => array(1 => PDO::PARAM_INT)
+				':clientID' => array($clientID => PDO::PARAM_INT)
 			);		
 
 			return parent::insert($sql, $params);
