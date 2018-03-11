@@ -19,6 +19,11 @@
 <body>
     <include href="./views/nav.html">
 
+
+    <pre>
+        {{ print_r(@course) }}
+    </pre>
+
     <div class="container">
         <!-- This is a template for the project summary -->
         <!-- If you are viewing this, then you are on a development file! -->
@@ -32,7 +37,7 @@
                 <!-- Project Description -->
                 <p class="lead">{{ @project->getDescription() }}</p>
                 <hr>
-            </div>  
+            </div>
         </div>
         <p class="text-right">
             <span>Status: <strong class="{{ @project->getStatus() }}">{{ ucfirst(@project->getStatus()) }}</strong></span> &nbsp;
@@ -95,27 +100,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>IT 328</td>
-                            <td>WINTER 2018</td>
-                            <td>John Doe</td>
-                        </tr>
-                        <tr>
-                            <td>IT 328</td>
-                            <td>WINTER 2018</td>
-                            <td>John Doe</td>
-                        </tr>
-                        <tr>
-                            <td>IT 328</td>
-                            <td>WINTER 2018</td>
-                            <td>John Doe</td>
-                        </tr>
+                        <repeat group="{{ @courses }}" value="{{ @course }}">
+                            <tr>
+                                <td>{{ @course->getCourseId() }}</td>
+                                <td>{{ @course->getQuarter() }}</td>
+                                <td>{{ @course->getInstructor() }}</td>
+                            </tr>
+                        </repeat>
                     </tbody>
                 </table>
             </div>
         </div>
         <p class="text-right">
-            <a class="btn gr-btn" href="new-class" role="button">Add Class</a>
+            <a class="btn gr-btn" href="{{ @BASE }}/new-class/{{ @projectID }}" role="button">Add Class</a>
         </p>
     </div>
 

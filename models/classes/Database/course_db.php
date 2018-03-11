@@ -41,6 +41,36 @@
 			return $course;
 		}
 
+		public static function getCourseByProjectID($id)
+		{
+			new ProjectDB();
+			$sql = "SELECT * FROM Course WHERE projectID = :id";
+			$params = array(':id' => array($id => PDO::PARAM_INT));
+			$result = parent::get($sql, $params);
+			
+			$courses = array();
+
+			foreach($result as $row) {
+				$result = $row;
+
+				$project = ProjectDB::getProject($result['projectID']);
+
+				array_push($courses, new Course($result['courseNumber'], 
+									$result['quarter'], 
+									$result['year'], 
+									$result['instructor'],
+									$result['github'],
+									$result['trello'],
+									$result['url'],
+									$result['username'],
+									$result['password'],
+									$result['notes'],
+									$project));
+			}
+
+			return $courses;
+		}
+
 		/**
 		 * This function inserts a new course into the database,
 		 * unless an identical row exists. Also inserts the course's
@@ -148,7 +178,7 @@
 		 * @param int @id The ID of the course.
 		 * @return int The project's ID.
 		 */
-		private static function getProjectID($id)
+		public static function getProjectID($id)
 		{
 			$sql = "SELECT projectID FROM Course WHERE courseID = :id";
 			$params = array(':id' => array($id => PDO::PARAM_INT));

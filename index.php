@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-
     // Turn on error reporting
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -56,7 +55,7 @@
         echo Template::instance()->render('views/login.html');
     });
 
-    $f3->route('GET|POST /new-class', function($f3) {
+    $f3->route('GET|POST /new-class/@id', function($f3, $params) {
         $quarters = array("fall", "winter", "spring", "summer");
         $f3->set("quarters", $quarters);
 
@@ -111,9 +110,20 @@
                 $course->setPassword($_POST['password']);
                 $course->setInstructorNotes($_POST['notes']);
 
-                $_SESSION['course'] = serialize($course);
+                new ProjectDB();
+                new CourseDB();
 
-                $f3->reroute('/new-project'); 
+                $projectID = $params['id'];
+
+                $project = ProjectDB::getProject($projectID);
+                $course->setProject(serialize($project));
+
+                CourseDB::insertCourse($course);
+
+                $f3->set('course', $course);
+                //$_SESSION['course'] = $course;
+
+                $f3->reroute('/project-summary/@id'); 
             }
         }
 
@@ -205,12 +215,19 @@
     $f3->route('GET /project-summary/@id', function($f3, $params) {
         
         new ProjectDB();
+        new CourseDB();
 
         $project = ProjectDB::getProject($params['id']);
+        $courses = CourseDB::getCourseByProjectID($params['id']);
+
         $client = $project->getClient();
+
+        $projectID = $params['id'];
 
         $f3->set('project', $project);
         $f3->set('client', $client);
+        $f3->set('projectID', $projectID);
+        $f3->set('courses', $courses);
 
         echo Template::instance()->render('views/summary_pages/project_summary.html');
     });

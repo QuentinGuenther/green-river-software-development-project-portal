@@ -10,15 +10,15 @@
 
     <link rel="icon" href="images/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="./styles/nav.css">
-    <link rel="stylesheet" type="text/css" href="./styles/form.css">
+    <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/form.css">
 
     <title>Green River Software Development Project Portal</title>
 </head>
 <body>
-    <include href="./views/nav.html">
+    <include href="/views/nav.html">
     <div class="container">
-        <form action='#' method="POST">
+        <form action='' method="POST">
             <div class="row">
                 <div class="col-12">
                     <fieldset>
@@ -132,6 +132,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="./javascripts/show-password.js"></script>
+    <script type="text/javascript" src="{{ @BASE }}/javascripts/show-password.js"></script>
 </body>
 </html>
