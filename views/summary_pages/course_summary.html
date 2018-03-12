@@ -10,24 +10,19 @@
 
     <link rel="icon" href="images/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="./styles/nav.css">
-    <link rel="stylesheet" type="text/css" href="./styles/form.css">
-    <link rel="stylesheet" type="text/css" href="./styles/state.css">
-    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/form.css">
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/state.css">
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/styles.css">
 
     <title>Green River Software Development Project Portal</title>
 </head>
 <body>
     <include href="./views/nav.html">
     <div class="container">
-
-        <pre>{{ @course }}</pre>
-        <!-- This is a template for the course summary -->
-        <!-- If you are viewing this, then you are on a development file! -->
-        <!-- This is phony data... -->
         <div class="row">
             <div class="col-12">
-                <h1 class="display-3 text-center">{{ @course->getProjectTitle() }}</h1>
+                <h1 class="display-3 text-center">{{ @project->getProjectTitle() }}</h1>
                 <p class="text-center h3 gr-text">{{ @course->getCourseID() }} | 
                                                     {{ ucfirst(@course->getQuarter()) }} {{ @course->getYear() }} | 
                                                     {{ @course->getInstructor() }}</p>
@@ -55,8 +50,8 @@
                 </p>
                 <div class="collapse" id="username_password">
                     <div class="card-body">
-                        <p>Username: <em>usernAme</em><br>
-                        Password: <em>P@ssw0rd!</em></p>
+                        <p>Username: <em>{{ @course->getUsername() }}</em><br>
+                        Password: <em>{{ @course->getPassword() }}</em></p>
                     </div>
                 </div>
             </div> 
@@ -105,6 +100,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="./javascripts/show-password.js"></script>
+    <script type="text/javascript" src="{{ @BASE }}/javascripts/show-password.js"></script>
 </body>
 </html>

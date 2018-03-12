@@ -237,8 +237,10 @@
         new CourseDB();
 
         $course = CourseDB::getCourse($params['id']);
+        $project = $course->getProject();
 
         $f3->set('course', $course);
+        $f3->set('project', $project);
 
         echo Template::instance()->render('views/summary_pages/course_summary.html');
         

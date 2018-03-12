@@ -53,7 +53,8 @@
 									$url = null,
 									$username = null,
 									$password = null,
-									$instructorNotes = null)
+									$instructorNotes = null,
+									$project)
 		{
 			$this->courseId = $courseId;
 			$this->quarter = $quarter;
@@ -66,6 +67,7 @@
 			$this->username = $username;
 			$this->password = $password;
 			$this->instructorNotes = $instructorNotes;
+			$this->project = $project;
 		}
 
 		/**
