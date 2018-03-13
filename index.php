@@ -59,6 +59,25 @@
         $quarters = array("fall", "winter", "spring", "summer");
         $f3->set("quarters", $quarters);
 
+        new CourseDB();
+        $course = CourseDB::getCourse($params['id']);
+
+        $update = false; // update flag to see if we need to update course
+
+        if(!empty($course->getCourseNumber())) {
+            $update = true;
+            $f3->set('courseID', $course->getCourseNumber());
+            $f3->set('quarter', $course->getQuarter());
+            $f3->set('year', $course->getYear());
+            $f3->set('instructor', $course->getInstructor());
+            $f3->set('github', $course->getGithub());
+            $f3->set('trello', $course->getTrello());
+            $f3->set('url', $course->getUrl());
+            $f3->set('username', $course->getUsername());
+            $f3->set('password', $course->getPassword());
+            $f3->set('notes', $course->getInstructorNotes());
+        }
+
         if(isset($_POST['submit'])) {
             
             $errors = array();
@@ -98,18 +117,6 @@
 
             if(empty($errors)) {
 
-                $course = new Course($_POST['courseID'],
-                                    $_POST['quarter'],
-                                    $_POST['year'],
-                                    $_POST['instructor']);
-
-                $course->setGithub($_POST['github']);
-                $course->setTrello($_POST['trello']);
-                $course->setUrl($_POST['url']);
-                $course->setUsername($_POST['username']);
-                $course->setPassword($_POST['password']);
-                $course->setInstructorNotes($_POST['notes']);
-
                 new ProjectDB();
                 new CourseDB();
 
@@ -118,7 +125,26 @@
                 $project = ProjectDB::getProject($projectID);
                 $course->setProject(serialize($project));
 
-                CourseDB::insertCourse($course);
+                $course = new Course($param['id'],
+                                    $_POST['courseID'],
+                                    $_POST['quarter'],
+                                    $_POST['year'],
+                                    $_POST['instructor'],
+                                    $_POST['github'],
+                                    $_POST['trello'],
+                                    $_POST['url'],
+                                    $_POST['username'],
+                                    $_POST['password'],
+                                    $_POST['notes'],
+                                    $project);
+
+                if(!$update) 
+                    CourseDB::insertCourse($course);
+
+                else {
+                    CourseDB::updateCourse($course, $params['id']);
+                    $f3->reroute('/course-summary/@id'); 
+                }
 
                 $f3->set('course', $course);
                 //$_SESSION['course'] = $course;
@@ -271,7 +297,10 @@
         $course = CourseDB::getCourse($params['id']);
         $project = $course->getProject();
 
+        $courseId = $params['id'];
+
         $f3->set('course', $course);
+        $f3->set('courseId', $courseId);
         $f3->set('project', $project);
 
         echo Template::instance()->render('views/summary_pages/course_summary.html');

@@ -97,7 +97,7 @@
                     <tbody>
                         <repeat group="{{ @courses }}" value="{{ @course }}">
                             <tr onclick="routeToCourse({{ @course->getCourseId() }})">
-                                <td>{{ @course->getCourseNumber() }}</td>
+                                <td>{{ @course->getCourseId() }}</td>
                                 <td>{{ @course->getQuarter() }}</td>
                                 <td>{{ @course->getInstructor() }}</td>
                             </tr>

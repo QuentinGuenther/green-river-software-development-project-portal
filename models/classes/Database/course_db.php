@@ -91,7 +91,7 @@
 
 			$sql = "INSERT INTO Course(courseNumber, projectID, quarter, year, instructor, github, trello, url, username, password, notes) VALUES (:courseNumber, :projectID, :quarter, :year, :instructor, :github, :trello, :url, :username, :password, :notes)";
 			$params = array(
-				':courseNumber' => array($course->getCourseId() => PDO::PARAM_STR),
+				':courseNumber' => array($course->getCourseNumber() => PDO::PARAM_STR),
 				':projectID' => array($projectID => PDO::PARAM_INT),
 				':quarter' => array($course->getQuarter() => PDO::PARAM_STR),
 				':year' => array($course->getYear() => PDO::PARAM_STR),
@@ -117,12 +117,12 @@
 		{
 			new ProjectDB();
 			
-			ProjectDB::updateProject($course->getProject(), self::getProjectID($id));
+			//ProjectDB::updateProject($course->getProject(), self::getProjectID($id));
 
 			$sql = "UPDATE Course SET courseNumber = :courseNumber, quarter = :quarter, year = :year, instructor = :instructor, github = :github, trello = :trello, url = :url,  username = :username, password = :password, notes = :notes WHERE courseID = :id";
 
 			$params = array(
-				':courseNumber' => array($course->getCourseId() => PDO::PARAM_STR),
+				':courseNumber' => array($course->getCourseNumber() => PDO::PARAM_STR),
 				':quarter' => array($course->getQuarter() => PDO::PARAM_STR),
 				':year' => array($course->getYear() => PDO::PARAM_STR),
 				':instructor' => array($course->getInstructor() => PDO::PARAM_STR),
