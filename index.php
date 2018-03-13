@@ -134,6 +134,30 @@
         require('models/address-helpers.php');
         $f3->set('states', $states);
 
+        // check if id is set
+        // if so, get the data from the 
+        // database using the id and set
+        // the forms
+        if(isset($_GET['id'])) {
+            new ClientDB();
+            new ProjectDB();
+
+            $project = ProjectDB::getProject($_GET['id']);
+            $client = $project->getClient();
+
+            $f3->set('title', $project->getProjectTitle());
+            $f3->set('description', $project->getDescription());
+            $f3->set('company', $client->getCompanyName());
+            $f3->set('website', $client->getWebsite());
+            $f3->set('address', $client->getStreetAddress());
+            $f3->set('zipcode', $client->getPostalCode());
+            $f3->set('city', $client->getCity());
+            $f3->set('clientName', $client->getClientName());
+            $f3->set('clientJobTitle', $client->getJobTitle());
+            $f3->set('clientEmail', $client->getEmail());
+            $f3->set('clientPhone', $client->getPhoneNumber());
+        }
+
         if(isset($_POST['submit'])) {
             $errors = array();
 
@@ -185,6 +209,7 @@
             $f3->set('errors', $errors);
 
             if(empty($errors)) {
+
                 $client = new Client($_POST['clientName'],
                                     $_POST['clientJobTitle'],
                                     $_POST['clientEmail'],
@@ -203,7 +228,14 @@
 
                 new ProjectDB();
 
-                ProjectDB::insertProject($project);
+                // if id is not set, insert new
+                // row, otherwise just update the row
+                if(!isset($_GET['id']))
+                    ProjectDB::insertProject($project);
+                else {
+                    echo "hello";
+                    ProjectDB::updateProject($project, $_GET['id']);
+                }
 
                 $f3->reroute('/'); 
             }

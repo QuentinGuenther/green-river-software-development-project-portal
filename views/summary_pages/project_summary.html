@@ -19,11 +19,6 @@
 <body>
     <include href="./views/nav.html">
 
-
-    <pre>
-        {{ print_r(@course) }}
-    </pre>
-
     <div class="container">
         <!-- This is a template for the project summary -->
         <!-- If you are viewing this, then you are on a development file! -->
@@ -41,7 +36,7 @@
         </div>
         <p class="text-right">
             <span>Status: <strong class="{{ @project->getStatus() }}">{{ ucfirst(@project->getStatus()) }}</strong></span> &nbsp;
-            <a class="btn gr-btn" href="#" role="button">Edit Project Information</a>
+            <a class="btn gr-btn" href="{{ @BASE }}/new-project?id={{ @projectID }}" role="button">Edit Project Information</a>
         </p>
         <div class="row justify-content-between">
             <div class="col-lg-5">

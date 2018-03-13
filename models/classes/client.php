@@ -117,6 +117,16 @@
 		}
 
 		/**
+		 * Get the client's website number.
+		 * @return string The client's website.
+		 */
+		public function getWebsite()
+		{
+			return $this->website;
+		}
+
+
+		/**
 		 * Set the phone number of the client.
 		 * @param string $phoneNumber The client's phone number.
 		 * @return null
