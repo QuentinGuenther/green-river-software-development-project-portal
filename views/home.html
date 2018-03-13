@@ -17,8 +17,6 @@
 <body>
     <include href="/views/nav.html">
 
-	
-
     <div class="container">
     	<h1 class="pt-4 pb-2 text-center">Current Projects</h1>
     	<pre>
@@ -37,7 +35,7 @@
 	    	</thead>
 	    	<tbody>
 	    		<repeat group="{{ @projects }}" value="{{ @project }}">
-	    			<tr onclick="routeTo({{ @project['projectID'] }})">
+	    			<tr onclick="routeToProject({{ @project['projectID'] }})">
 		    			<td>{{ @project['projectID'] }}</td>
 		    			<td>{{ @project['title'] }}</td>
 		    			<td>{{ @project['description'] }}</td>

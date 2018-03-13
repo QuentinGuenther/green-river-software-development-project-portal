@@ -19,14 +19,15 @@
 		public static function getCourse($id) 
 		{
 			new ProjectDB();
-			$sql = "SELECT courseNumber, quarter, year, instructor, github, trello, url, username, password, notes, projectID FROM Course WHERE courseID = :id";
+			$sql = "SELECT courseID, courseNumber, quarter, year, instructor, github, trello, url, username, password, notes, projectID FROM Course WHERE courseID = :id";
 			$params = array(':id' => array($id => PDO::PARAM_INT));
 			$result = parent::get($sql, $params);
 			$result = $result[0];
 
 			$project = ProjectDB::getProject($result['projectID']);
 
-			$course = new Course($result['courseNumber'], 
+			$course = new Course($result['courseID'],
+								$result['courseNumber'], 
 								$result['quarter'], 
 								$result['year'], 
 								$result['instructor'],
@@ -55,7 +56,8 @@
 
 				$project = ProjectDB::getProject($result['projectID']);
 
-				array_push($courses, new Course($result['courseNumber'], 
+				array_push($courses, new Course($result['courseID'],
+									$result['courseNumber'], 
 									$result['quarter'], 
 									$result['year'], 
 									$result['instructor'],

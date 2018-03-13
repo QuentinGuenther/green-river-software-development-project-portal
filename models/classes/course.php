@@ -11,6 +11,7 @@
 	{
 		// course information
 		private $_courseId;
+		private $_courseNumber;
 		private $_quarter;
 		private $_year;
 		private $_instructor;
@@ -44,7 +45,8 @@
 		 * @param string $instructorNotes the notes to set
 		 * @param Project project the project that the class belongs to
 		 */
-		public function __construct($courseId, 
+		public function __construct($courseId,
+									$courseNumber,
 									$quarter, 
 									$year, 
 									$instructor,
@@ -57,6 +59,7 @@
 									$project)
 		{
 			$this->courseId = $courseId;
+			$this->courseNumber = $courseNumber;
 			$this->quarter = $quarter;
 			$this->year = $year;
 			$this->instructor = $instructor;
@@ -77,6 +80,15 @@
 		public function getCourseId()
 		{
 			return $this->courseId;
+		}
+
+		/**
+		 * Gets the courseNumber
+		 * @return int
+		 */
+		public function getCourseNumber()
+		{
+			return $this->courseNumber;
 		}
 
 		/**
