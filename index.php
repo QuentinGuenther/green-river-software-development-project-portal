@@ -20,7 +20,7 @@
 
     // Default route
     $f3->route('GET|POST /', function($f3) {
-  
+        
         $template = new Template();
 
         $db = new ProjectDB();
@@ -35,6 +35,8 @@
     // Login route
     $f3->route('GET|POST /login', function($f3) {
         if(isset($_POST['submit'])) {
+
+
             $errors = array();
 
             //include('models/login-validation.php');
@@ -42,16 +44,24 @@
             if(!validEmail($_POST['username']))
                 $errors['username'] = 'Username must be a valid email';
 
-            $f3->set('username', $_POST['username']); 
+            new UserDB();
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            if(!UserDB::login($username, $password))
+                $errors['invalidLogin'] = 'The username or password is invalid';
+
+            $f3->set('username', $_POST['username']);
             $f3->set('errors', $errors);
 
+
             if(empty($errors)) {
+
                 $_SESSION['username'] = $_POST['username'];
 
                 $f3->reroute('/');
             }
         }
-        
+
         echo Template::instance()->render('views/login.html');
     });
 
@@ -79,7 +89,7 @@
         }
 
         if(isset($_POST['submit'])) {
-            
+
             $errors = array();
 
             if(!validCourseId($_POST['courseID']))
@@ -88,7 +98,7 @@
             if(!validQuarter($_POST['quarter']))
                 $errors['quarter'] = 'Invalid course quarter';
 
-            if(!validDate($_POST['year'])) 
+            if(!validDate($_POST['year']))
                 $errors['year'] = "Invalid year: must be ".date('Y')." or greater";
 
             if(!validGithubUrl($_POST['github']))
@@ -138,18 +148,18 @@
                                     $_POST['notes'],
                                     $project);
 
-                if(!$update) 
+                if(!$update)
                     CourseDB::insertCourse($course);
 
                 else {
                     CourseDB::updateCourse($course, $params['id']);
-                    $f3->reroute('/course-summary/@id'); 
+                    $f3->reroute('/course-summary/@id');
                 }
 
                 $f3->set('course', $course);
                 //$_SESSION['course'] = $course;
 
-                $f3->reroute('/project-summary/@id'); 
+                $f3->reroute('/project-summary/@id');
             }
         }
 
@@ -161,7 +171,7 @@
         $f3->set('states', $states);
 
         // check if id is set
-        // if so, get the data from the 
+        // if so, get the data from the
         // database using the id and set
         // the forms
         if(isset($_GET['id'])) {
@@ -219,7 +229,7 @@
 
             if(!validPhone($_POST['clientPhoneNumber']))
                 $errors['clientPhone'] = 'Invalid format, must be: 123-4567-8910';
-            
+
             $f3->set('title', $_POST['projectTitle']);
             $f3->set('description', $_POST['projectDescription']);
             $f3->set('company', $_POST['companyName']);
@@ -262,7 +272,7 @@
                     ProjectDB::updateProject($project, $_GET['id']);
                 }
 
-                $f3->reroute('/'); 
+                $f3->reroute('/');
             }
         }
 
@@ -270,7 +280,6 @@
     });
 
     $f3->route('GET /project-summary/@id', function($f3, $params) {
-        
         new ProjectDB();
         new CourseDB();
 
@@ -288,9 +297,9 @@
 
         echo Template::instance()->render('views/summary_pages/project_summary.html');
     });
-    
+
     $f3->route('GET /course-summary/@id', function($f3, $params) {
-       
+
         new CourseDB();
 
         $course = CourseDB::getCourse($params['id']);
@@ -319,7 +328,7 @@
         if(isset($_POST['delete'])) {
             ProjectDB::deleteProject($projectId);
             $f3->reroute('/');
-        } 
+        }
 
         if(isset($_POST['cancel'])) {
             $f3->reroute('/');
@@ -332,6 +341,6 @@
     $f3->set('ONERROR', function($f3) {
         echo Template::instance()->render('views/error.html');
     });
-    
+
     $f3->run();
 ?>

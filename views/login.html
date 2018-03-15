@@ -15,6 +15,9 @@
 <body>
     <div id="login-content">
         <form action='' method="POST">
+            <check if="{{ @errors['invalidLogin'] }}">
+                <p class="text-danger"><b>{{ @errors['invalidLogin'] }}</b></p>
+            </check>
             <div class="form-group">
                 <label for="username"><strong>Username</strong></label>
                 <input type="email" class="form-control" id="username" name="username" />
