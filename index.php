@@ -259,7 +259,6 @@
                 if(!isset($_GET['id']))
                     ProjectDB::insertProject($project);
                 else {
-                    echo "hello";
                     ProjectDB::updateProject($project, $_GET['id']);
                 }
 
@@ -304,7 +303,29 @@
         $f3->set('project', $project);
 
         echo Template::instance()->render('views/summary_pages/course_summary.html');
-        
+    });
+
+    $f3->route('GET|POST /delete-project/@id', function($f3, $params){
+        new ProjectDB();
+
+        $projectId = $params['id'];
+        $project = ProjectDB::getProject($params['id']);
+        $client = $project->getClient();
+
+        $f3->set('projectId', $projectId);
+        $f3->set('project', $project);
+        $f3->set('client', $client);
+
+        if(isset($_POST['delete'])) {
+            ProjectDB::deleteProject($projectId);
+            $f3->reroute('/');
+        } 
+
+        if(isset($_POST['cancel'])) {
+            $f3->reroute('/');
+        }
+
+        echo Template::instance()->render('views/delete.html');
     });
 
     // Error page
