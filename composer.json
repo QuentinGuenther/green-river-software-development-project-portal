@@ -11,7 +11,9 @@
     }
   ],
   "require": {
-    "bcosca/fatfree-core": "dev-master"
+    "bcosca/fatfree-core": "dev-master",
+		"knplabs/github-api": "^2.7",
+		"php-http/guzzle6-adapter": "^1.1"
   },
   "autoload": {
     "classmap": ["models/classes/"]

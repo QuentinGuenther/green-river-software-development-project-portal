@@ -18,6 +18,7 @@
     // Set debug level to dev
     $f3->set('DEBUG', 3);
 
+
     // Default route
     $f3->route('GET|POST /', function($f3) {
         
@@ -29,13 +30,11 @@
         $f3->set('projects', $projects);
 
         echo $template->render('views/home.html');
-
     });
 
     // Login route
     $f3->route('GET|POST /login', function($f3) {
         if(isset($_POST['submit'])) {
-
 
             $errors = array();
 
@@ -47,6 +46,7 @@
             new UserDB();
             $username = $_POST['username'];
             $password = $_POST['password'];
+
             if(!UserDB::login($username, $password))
                 $errors['invalidLogin'] = 'The username or password is invalid';
 
@@ -55,9 +55,7 @@
 
 
             if(empty($errors)) {
-
                 $_SESSION['username'] = $_POST['username'];
-
                 $f3->reroute('/');
             }
         }
@@ -316,9 +314,12 @@
 
     $f3->route('GET|POST /delete-project/@id', function($f3, $params){
         new ProjectDB();
+        new CourseDB();
 
         $projectId = $params['id'];
+
         $project = ProjectDB::getProject($params['id']);
+        $courses = CourseDB::getCourseByProjectID($params['id']);
         $client = $project->getClient();
 
         $f3->set('projectId', $projectId);
@@ -327,6 +328,10 @@
 
         if(isset($_POST['delete'])) {
             ProjectDB::deleteProject($projectId);
+
+            foreach($courses as $course)
+                CourseDB::deleteCourse($course->getCourseId());
+
             $f3->reroute('/');
         }
 
