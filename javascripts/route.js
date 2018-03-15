@@ -31,6 +31,7 @@ function confirmDelete(id, title) {
 		var url = window.location.href += 'delete-project/' + id; // add project-summary and the id to the url
 		url = url.replace('//', '/'); // remove extraneous slashes
 
-		window.location.href.replace(url); // go to the url
+
+		window.location.href.replace(url) ; // go to the url
 	}
 }
