@@ -42,6 +42,13 @@ Many projects go through several iterations. So, They also need a way to view a 
 ```
 * At the top of db.php there is a require_once statement that links to db_config.php.
 
+# Diagrams
+## [MySQL Entity–Relationship Model](./uml/er-diagram.png)
+<div style="text-align:center"><img src ="./uml/er-diagram.png" /></div>
+
+## [Class Diagram](./uml/class-diagram.svg)
+<div style="text-align:center"><img src ="./uml/class-diagram.svg" /></div>
+
 ## Authors
 * Quentin Guenther
 * Nathan Corbin
