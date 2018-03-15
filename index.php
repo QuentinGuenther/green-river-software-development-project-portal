@@ -91,7 +91,7 @@
             $errors = array();
 
             if(!validCourseId($_POST['courseID']))
-                $errors['courseID'] = 'Must be a 4 digit number';
+                $errors['courseID'] = 'Course ID (ex., IT 305)';
 
             if(!validQuarter($_POST['quarter']))
                 $errors['quarter'] = 'Invalid course quarter';

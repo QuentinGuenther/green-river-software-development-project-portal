@@ -10,7 +10,7 @@
 	}
 
 	function validCourseID($courseID) {
-		return ctype_alnum( (int) $courseID) && strlen($courseID) == 4;
+		return strlen($courseID) <= 8 && strlen($courseID) >= 4;
 	}
 
 	function validQuarter($quarter) {
@@ -24,6 +24,8 @@
 	}
 
 	function validGithubUrl($url) {
+		if(empty($url))
+			return true;
 		if(filter_var($url, FILTER_VALIDATE_URL)) {
 			if(parse_url($url, PHP_URL_HOST) == "github.com")
 				return true;
@@ -33,6 +35,8 @@
 	}
 
 	function validTrelloUrl($url) {
+		if(empty($url))
+			return true;
 		if(filter_var($url, FILTER_VALIDATE_URL)) {
 			if(parse_url($url, PHP_URL_HOST) == "trello.com")
 				return true;
@@ -42,6 +46,8 @@
 	}
 	
 	function validUrl($url) {
+		if(empty($url))
+			return true;
 		return filter_var($url, FILTER_VALIDATE_URL);
 	}
 
