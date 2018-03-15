@@ -193,6 +193,8 @@
         }
 
         if(isset($_POST['submit'])) {
+            $_POST['clientPhoneNumber'] = preg_replace("/[^0-9,.]/", "", $_POST['clientPhoneNumber']);
+
             $errors = array();
 
             if(empty($_POST['projectTitle']))
@@ -226,7 +228,7 @@
                 $errors['clientEmail'] = 'Please enter a valid client email';
 
             if(!validPhone($_POST['clientPhoneNumber']))
-                $errors['clientPhone'] = 'Invalid format, must be: 123-4567-8910';
+                $errors['clientPhone'] = 'Invalid format, must be: 123-456-8910';
 
             $f3->set('title', $_POST['projectTitle']);
             $f3->set('description', $_POST['projectDescription']);
