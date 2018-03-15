@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete Project</title>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="icon" href="/images/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/form.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<include href="/views/nav.html">
+
+	<div class="container">
+		<h2 class="text-center pt-4">Delete Project</h2>
+
+		<div class="col-md-8 pt-4" style="margin: 0 auto;">
+			<table class="table table-bordered">
+				<thead>
+					<th class="text-center" colspan="2">Project Information</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td width="30%"><b>Project Title:</b></td>
+						<td><em>{{ @project->getProjectTitle() }}</em></td>
+					</tr>
+					<tr>
+						<td width="30%"><b>Project Description:</b></td>
+						<td><em>{{ @project->getDescription() }}</em></td>
+					</tr>
+					<tr>
+						<td width="30%"><b>Project Status:</b></td>
+						<td><em>{{ @project->getStatus() }}</em></td>
+					</tr>
+					<tr>
+						<td width="30%"><b>Client Name:</b></td>
+						<td><em>{{ @client->getCompanyName() }}</em></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<form method="POST">
+			<div class="row justify-content-center">
+				<div class=" pt-3" id="delete">
+					<input type="submit" class="btn btn-primary" id="delete" name="delete" value="Delete Project">
+				</div>
+				<div class=" pt-3 pl-2" id="back">
+					<input type="submit" class="btn btn-primary" id="cancel" name="cancel" value="Cancel">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
