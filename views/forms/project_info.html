@@ -37,6 +37,21 @@
                                 <p class="text-danger"><b>{{ @errors['description'] }}</b></p>
                             </check>
                         </div>
+                        <div class="form-group col-md-3">
+                            <label>{{@projectStatus}}</label>
+                            <select class="custom-select" name="status">
+                                <repeat group="{{ @status }}" key="{{ @key }}" value="{{ @value }}">
+                                    <check if="{{ @key == @projectStatus }}">
+                                        <true>
+                                            <option value="{{ @key }}" selected>{{ @value }}</option>
+                                        </true>
+                                        <false>
+                                                <option value="{{ @key }}">{{ @value }}</option>
+                                        </false>
+                                    </check>
+                                </repeat>
+                            </select>
+                        </div>
                     </fieldset>
                 </div>
             </div>

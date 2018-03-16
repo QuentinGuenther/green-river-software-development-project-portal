@@ -166,7 +166,10 @@
 
     $f3->route('GET|POST /new-project', function($f3) {
         require('models/address-helpers.php');
+        require('models/status-helpers.php');
+
         $f3->set('states', $states);
+        $f3->set('status', $status);
 
         // check if id is set
         // if so, get the data from the
@@ -181,6 +184,7 @@
 
             $f3->set('title', $project->getProjectTitle());
             $f3->set('description', $project->getDescription());
+            $f3->set('projectStatus', $project->getStatus());
             $f3->set('company', $client->getCompanyName());
             $f3->set('website', $client->getWebsite());
             $f3->set('address', $client->getStreetAddress());
@@ -232,6 +236,7 @@
 
             $f3->set('title', $_POST['projectTitle']);
             $f3->set('description', $_POST['projectDescription']);
+            $f3->set('projectStatus', $_POST['status']);
             $f3->set('company', $_POST['companyName']);
             $f3->set('website', $_POST['companyWebsite']);
             $f3->set('address', $_POST['address']);
@@ -259,7 +264,7 @@
 
                 $project = new Project($_POST['projectTitle'],
                                         $_POST['projectDescription'],
-                                        'pending',
+                                        $_POST['status'],
                                         $client);
 
                 new ProjectDB();
