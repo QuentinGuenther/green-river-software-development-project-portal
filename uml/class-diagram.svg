@@ -1,296 +1,416 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Bouml (http://bouml.free.fr/) -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="308" height="712" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg width="972" height="711" version="1.1" xmlns="http://www.w3.org/2000/svg">
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="201" y="209" width="2" height="90" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="157" y="297" width="46" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="154" y="206" width="47" height="91" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="178" y="210">Client</text>
-	<line stroke="black" stroke-opacity="1" x1="154" y1="212" x2="201" y2="212" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="216">_clientName</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="222">_jobTitle</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="228">_email</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="234">_phoneNumber</text>
-	<line stroke="black" stroke-opacity="1" x1="154" y1="236" x2="201" y2="236" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="240">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="246">getClientName()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="252">setClientName()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="258">getJobTitle()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="264">setJobTitle()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="270">getEmail()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="276">setEmail()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="282">getPhoneNumber()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="288">getWebsite()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="155" y="294">setPhoneNumber()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="736" y="208" width="2" height="90" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="418" y="296" width="320" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="415" y="205" width="321" height="91" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="576" y="209">Client</text>
+	<line stroke="black" stroke-opacity="1" x1="415" y1="211" x2="736" y2="211" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="215">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="215">$_clientName</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="221">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="221">$_jobTitle</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="227">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="227">$_email</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="233">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="233">$_phoneNumber</text>
+	<line stroke="black" stroke-opacity="1" x1="415" y1="235" x2="736" y2="235" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="239">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="239">__construct($clientName, $jobTitle, $email, $phoneNumber, $companyName, $website, $streetAddress, $state, $city, $postalCode): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="245">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="245">getClientName(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="251">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="251">setClientName($clientName): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="257">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="257">getJobTitle(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="263">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="263">setJobTitle($jobTitle): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="269">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="269">getEmail(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="275">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="275">setEmail($email): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="281">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="281">getPhoneNumber(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="287">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="287">getWebsite(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="416" y="293">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="422" y="293">setPhoneNumber($phoneNumber): null </text>
 </g>
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="198" y="340" width="2" height="84" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="160" y="422" width="40" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="157" y="337" width="41" height="85" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="178" y="341">Project</text>
-	<line stroke="black" stroke-opacity="1" x1="157" y1="343" x2="198" y2="343" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="347">_projectTitle</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="353">_description</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="359">_status</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="365">_client</text>
-	<line stroke="black" stroke-opacity="1" x1="157" y1="367" x2="198" y2="367" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="371">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="377">getClient()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="383">getProjectTitle()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="389">setProjectTitle()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="395">getDescription()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="401">setDescription()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="407">getStatus()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="413">setStatus()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="158" y="419">setClient()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="642" y="334" width="2" height="84" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="508" y="416" width="136" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="505" y="331" width="137" height="85" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="574" y="335">Project</text>
+	<line stroke="black" stroke-opacity="1" x1="505" y1="337" x2="642" y2="337" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="341">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="341">$_projectTitle</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="347">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="347">$_description</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="353">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="353">$_status</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="359">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="359">$_client</text>
+	<line stroke="black" stroke-opacity="1" x1="505" y1="361" x2="642" y2="361" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="365">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="365">__construct($projectTitle, $description, $status, $client) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="371">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="371">getClient() </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="377">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="377">getProjectTitle(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="383">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="383">setProjectTitle($projectTitle): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="389">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="389">getDescription(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="395">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="395">setDescription($description): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="401">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="401">getStatus(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="407">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="407">setStatus($status): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="506" y="413">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="512" y="413">setClient($client) </text>
 </g>
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="206" y="477" width="2" height="222" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="158" y="697" width="50" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="155" y="474" width="51" height="223" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="181" y="478">Course</text>
-	<line stroke="black" stroke-opacity="1" x1="155" y1="480" x2="206" y2="480" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="484">_courseId</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="490">_courseNumber</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="496">_quarter</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="502">_year</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="508">_instructor</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="514">_github</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="520">_trello</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="526">_url</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="532">_username</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="538">_password</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="544">_instructorNotes</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="550">_project</text>
-	<line stroke="black" stroke-opacity="1" x1="155" y1="552" x2="206" y2="552" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="556">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="562">getCourseId()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="568">getCourseNumber()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="574">getQuarter()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="580">getYear()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="586">getInstructor()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="592">getGithub()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="598">getTrello()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="604">getUrl()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="610">getUsername()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="616">getPassword()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="622">getInstructorNotes()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="628">getProject()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="634">setCourseId()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="640">setQuarter()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="646">setYear()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="652">setInstructor()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="658">setGithub()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="664">setTrello()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="670">setUrl()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="676">setUsername()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="682">setPassword()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="688">setInstructorNotes()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="156" y="694">setProject()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="781" y="476" width="2" height="222" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="369" y="696" width="414" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="366" y="473" width="415" height="223" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="574" y="477">Course</text>
+	<line stroke="black" stroke-opacity="1" x1="366" y1="479" x2="781" y2="479" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="483">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="483">$_courseId</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="489">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="489">$_courseNumber</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="495">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="495">$_quarter</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="501">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="501">$_year</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="507">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="507">$_instructor</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="513">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="513">$_github</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="519">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="519">$_trello</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="525">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="525">$_url</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="531">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="531">$_username</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="537">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="537">$_password</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="543">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="543">$_instructorNotes</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="549">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="549">$_project</text>
+	<line stroke="black" stroke-opacity="1" x1="366" y1="551" x2="781" y2="551" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="555">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="555">__construct($courseId, $courseNumber, $quarter, $year, $instructor, $github = null, $trello = null, $url = null, $username = null, $password = null, $instructorNotes = null, $project) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="561">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="561">getCourseId(): int </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="567">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="567">getCourseNumber(): int </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="573">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="573">getQuarter(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="579">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="579">getYear(): int </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="585">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="585">getInstructor(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="591">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="591">getGithub(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="597">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="597">getTrello(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="603">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="603">getUrl(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="609">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="609">getUsername(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="615">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="615">getPassword(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="621">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="621">getInstructorNotes(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="627">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="627">getProject(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="633">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="633">setCourseId($courseId) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="639">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="639">setQuarter($quarter) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="645">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="645">setYear($year) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="651">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="651">setInstructor($instructor) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="657">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="657">setGithub($github) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="663">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="663">setTrello($trello) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="669">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="669">setUrl($url) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="675">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="675">setUsername($username) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="681">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="681">setPassword($password) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="687">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="687">setInstructorNotes($instructorNotes) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="367" y="693">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="373" y="693">setProject($project) </text>
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="181" y1="300" x2="175" y2="306" />
-	<line stroke="black" stroke-opacity="1" x1="181" y1="300" x2="187" y2="306" />
-	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="181" y1="336" x2="181" y2="300" />
+	<line stroke="black" stroke-opacity="1" x1="577" y1="299" x2="571" y2="305" />
+	<line stroke="black" stroke-opacity="1" x1="577" y1="299" x2="583" y2="305" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="577" y1="330" x2="577" y2="299" />
 </g>
 <g>
-	<line stroke-dasharray="4,4" stroke="#000000" stroke-opacity="1" x1="179" y1="473" x2="180" y2="430" />
-	<line stroke="#000000" stroke-opacity="1" x1="181" y1="425" x2="174" y2="430" />
-	<line stroke="#000000" stroke-opacity="1" x1="181" y1="425" x2="186" y2="431" />
-	<line stroke="#000000" stroke-opacity="1" x1="174" y1="430" x2="186" y2="431" />
+	<line stroke-dasharray="4,4" stroke="#000000" stroke-opacity="1" x1="576" y1="472" x2="576" y2="424" />
+	<line stroke="#000000" stroke-opacity="1" x1="577" y1="419" x2="570" y2="424" />
+	<line stroke="#000000" stroke-opacity="1" x1="577" y1="419" x2="582" y2="425" />
+	<line stroke="#000000" stroke-opacity="1" x1="570" y1="424" x2="582" y2="425" />
 </g>
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="138" y="194" width="2" height="120" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="90" y="312" width="50" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="87" y="191" width="51" height="121" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="113" y="195">ClientCompany</text>
-	<line stroke="black" stroke-opacity="1" x1="87" y1="197" x2="138" y2="197" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="201">_companyName</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="207">_website</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="213">_streetAddress</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="219">_state</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="225">_city</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="231">_postalCode</text>
-	<line stroke="black" stroke-opacity="1" x1="87" y1="233" x2="138" y2="233" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="237">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="243">getCompanyName()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="249">setCompanyName()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="255">getWebsite()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="261">setWebsite()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="267">getStreetAddress()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="273">setStreetAddress()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="279">getState()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="285">setState()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="291">getCity()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="297">setCity()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="303">getPostalCode()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="88" y="309">setPostalCode()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="348" y="193" width="2" height="120" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="148" y="311" width="202" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="145" y="190" width="203" height="121" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="247" y="194">ClientCompany</text>
+	<line stroke="black" stroke-opacity="1" x1="145" y1="196" x2="348" y2="196" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="200">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="200">$_companyName</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="206">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="206">$_website</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="212">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="212">$_streetAddress</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="218">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="218">$_state</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="224">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="224">$_city</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="230">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="230">$_postalCode</text>
+	<line stroke="black" stroke-opacity="1" x1="145" y1="232" x2="348" y2="232" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="236">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="236">__construct($companyName, $website, $streetAddress, $state, $city, $postalCode) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="242">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="242">getCompanyName(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="248">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="248">setCompanyName($companyName): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="254">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="254">getWebsite(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="260">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="260">setWebsite($website): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="266">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="266">getStreetAddress(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="272">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="272">setStreetAddress($streetAddress): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="278">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="278">getState(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="284">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="284">setState($state): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="290">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="290">getCity(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="296">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="296">setCity($city): null </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="302">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="302">getPostalCode(): string </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="146" y="308">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="152" y="308">setPostalCode($postalCode): null </text>
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="153" y1="253" x2="147" y2="253" />
-	<line stroke="#000000" stroke-opacity="1" x1="141" y1="253" x2="147" y2="259" />
-	<line stroke="#000000" stroke-opacity="1" x1="141" y1="253" x2="147" y2="247" />
-	<line stroke="#000000" stroke-opacity="1" x1="147" y1="259" x2="147" y2="247" />
+	<line stroke="#000000" stroke-opacity="1" x1="414" y1="252" x2="357" y2="252" />
+	<line stroke="#000000" stroke-opacity="1" x1="351" y1="252" x2="357" y2="258" />
+	<line stroke="#000000" stroke-opacity="1" x1="351" y1="252" x2="357" y2="246" />
+	<line stroke="#000000" stroke-opacity="1" x1="357" y1="258" x2="357" y2="246" />
 </g>
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="259" y="226" width="2" height="56" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="221" y="280" width="40" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="218" y="223" width="41" height="57" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="239" y="227">ClientDB</text>
-	<line stroke="black" stroke-opacity="1" x1="218" y1="229" x2="259" y2="229" />
-	<line stroke="black" stroke-opacity="1" x1="218" y1="231" x2="259" y2="231" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="219" y="235">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="219" y="241">getClient()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="219" y="247">insertClient()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="219" y="253">updateClient()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="219" y="259">deleteClient()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="219" y="265">matchToRow()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="219" y="271">getCompanyID()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="219" y="277">isCompany()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="890" y="226" width="2" height="56" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="806" y="280" width="86" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="803" y="223" width="87" height="57" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="847" y="227">ClientDB</text>
+	<line stroke="black" stroke-opacity="1" x1="803" y1="229" x2="890" y2="229" />
+	<line stroke="black" stroke-opacity="1" x1="803" y1="231" x2="890" y2="231" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="804" y="235">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="810" y="235">__construct(): null. </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="804" y="241">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="810" y="241">getClient($id): New </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="804" y="247">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="810" y="247">insertClient($client): ID </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="804" y="253">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="810" y="253">updateClient($client, $id): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="804" y="259">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="810" y="259">deleteClient($id): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="804" y="265">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="810" y="265">matchToRow($client): ID </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="804" y="271">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="810" y="271">getCompanyID($id): int </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="804" y="277">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="810" y="277">isCompany($id): boolean </text>
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="204" y1="253" x2="210" y2="259" />
-	<line stroke="black" stroke-opacity="1" x1="204" y1="253" x2="210" y2="247" />
-	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="217" y1="253" x2="204" y2="253" />
+	<line stroke="black" stroke-opacity="1" x1="739" y1="252" x2="745" y2="258" />
+	<line stroke="black" stroke-opacity="1" x1="739" y1="252" x2="745" y2="246" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="802" y1="252" x2="739" y2="252" />
 </g>
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="130" y="25" width="2" height="38" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="98" y="61" width="34" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="95" y="22" width="35" height="39" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" font-style="italic" text-anchor="middle" x="113" y="26">RestDB</text>
-	<line stroke="black" stroke-opacity="1" x1="95" y1="28" x2="130" y2="28" />
-	<line stroke="black" stroke-opacity="1" x1="95" y1="30" x2="130" y2="30" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="96" y="34">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="96" y="40">get()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="96" y="46">insert()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="96" y="52">update()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="96" y="58">delete()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="301" y="25" width="2" height="38" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="199" y="61" width="104" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="196" y="22" width="105" height="39" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" font-style="italic" text-anchor="middle" x="249" y="26">RestDB</text>
+	<line stroke="black" stroke-opacity="1" x1="196" y1="28" x2="301" y2="28" />
+	<line stroke="black" stroke-opacity="1" x1="196" y1="30" x2="301" y2="30" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="197" y="34">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="203" y="34">__construct(): PDO </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="197" y="40">#</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="203" y="40">get($sql, $params = array()): An </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="197" y="46">#</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="203" y="46">insert($sql, $params, $returnID = true): int </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="197" y="52">#</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="203" y="52">update($sql, $params): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="197" y="58">#</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="203" y="58">delete($sql, $params): boolean </text>
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="238" y1="222" x2="238" y2="86" />
+	<line stroke="#000000" stroke-opacity="1" x1="847" y1="222" x2="847" y2="87" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="238" y1="86" x2="114" y2="86" />
+	<line stroke="#000000" stroke-opacity="1" x1="847" y1="87" x2="248" y2="87" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="114" y1="86" x2="114" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="114" y1="64" x2="108" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="114" y1="64" x2="120" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="108" y1="70" x2="120" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="87" x2="248" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="242" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="254" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="242" y1="70" x2="254" y2="70" />
 </g>
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="293" y="351" width="2" height="62" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="257" y="411" width="38" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="254" y="348" width="39" height="63" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="274" y="352">ProjectDB</text>
-	<line stroke="black" stroke-opacity="1" x1="254" y1="354" x2="293" y2="354" />
-	<line stroke="black" stroke-opacity="1" x1="254" y1="356" x2="293" y2="356" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="255" y="360">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="255" y="366">getAllProjects()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="255" y="372">getProject()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="255" y="378">insertProject()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="255" y="384">updateProject()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="255" y="390">deleteProject()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="255" y="396">getClientID()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="255" y="402">isClient()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="255" y="408">matchToRow()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="957" y="347" width="2" height="62" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="865" y="407" width="94" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="862" y="344" width="95" height="63" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="910" y="348">ProjectDB</text>
+	<line stroke="black" stroke-opacity="1" x1="862" y1="350" x2="957" y2="350" />
+	<line stroke="black" stroke-opacity="1" x1="862" y1="352" x2="957" y2="352" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="863" y="356">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="869" y="356">__construct(): null. </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="863" y="362">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="869" y="362">getAllProjects(): Associative </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="863" y="368">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="869" y="368">getProject($id): New </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="863" y="374">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="869" y="374">insertProject($project): ID </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="863" y="380">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="869" y="380">updateProject($project, $id): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="863" y="386">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="869" y="386">deleteProject($id): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="863" y="392">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="869" y="392">getClientID($id): int </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="863" y="398">-</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="869" y="398">isClient($id): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="863" y="404">#</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="869" y="404">matchToRow($project): ID </text>
 </g>
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="136" y="110" width="2" height="44" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="94" y="152" width="44" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="91" y="107" width="45" height="45" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="114" y="111">CompanyDB</text>
-	<line stroke="black" stroke-opacity="1" x1="91" y1="113" x2="136" y2="113" />
-	<line stroke="black" stroke-opacity="1" x1="91" y1="115" x2="136" y2="115" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="92" y="119">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="92" y="125">getCompany()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="92" y="131">insertCompany()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="92" y="137">updateCompany()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="92" y="143">deleteCompany()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="92" y="149">matchToRow()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="300" y="112" width="2" height="44" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="196" y="154" width="106" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="193" y="109" width="107" height="45" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="247" y="113">CompanyDB</text>
+	<line stroke="black" stroke-opacity="1" x1="193" y1="115" x2="300" y2="115" />
+	<line stroke="black" stroke-opacity="1" x1="193" y1="117" x2="300" y2="117" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="194" y="121">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="200" y="121">__construct(): null. </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="194" y="127">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="200" y="127">getCompany($id): New </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="194" y="133">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="200" y="133">insertCompany($company): ID </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="194" y="139">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="200" y="139">updateCompany($company, $id): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="194" y="145">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="200" y="145">deleteCompany($id): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="194" y="151">#</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="200" y="151">matchToRow($company): ID </text>
 </g>
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="99" y="560" width="2" height="56" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="43" y="614" width="58" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="40" y="557" width="59" height="57" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="70" y="561">CourseDB</text>
-	<line stroke="black" stroke-opacity="1" x1="40" y1="563" x2="99" y2="563" />
-	<line stroke="black" stroke-opacity="1" x1="40" y1="565" x2="99" y2="565" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="41" y="569">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="41" y="575">getCourse()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="41" y="581">getCourseByProjectID()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="41" y="587">insertCourse()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="41" y="593">updateCourse()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="41" y="599">deleteCourse()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="41" y="605">matchToRow()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="41" y="611">getProjectID()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="180" y="556" width="2" height="56" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="86" y="610" width="96" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="83" y="553" width="97" height="57" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="132" y="557">CourseDB</text>
+	<line stroke="black" stroke-opacity="1" x1="83" y1="559" x2="180" y2="559" />
+	<line stroke="black" stroke-opacity="1" x1="83" y1="561" x2="180" y2="561" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="84" y="565">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="90" y="565">__construct(): null. </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="84" y="571">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="90" y="571">getCourse($id): New </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="84" y="577">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="90" y="577">getCourseByProjectID($id) </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="84" y="583">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="90" y="583">insertCourse($course): ID </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="84" y="589">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="90" y="589">updateCourse($course, $id): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="84" y="595">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="90" y="595">deleteCourse($id): boolean </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="84" y="601">#</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="90" y="601">matchToRow($course): ID </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="84" y="607">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="90" y="607">getProjectID($id): int </text>
 </g>
 <g>
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="52" y="109" width="2" height="20" />
-	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="20" y="127" width="34" height="2" />
-	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="17" y="106" width="35" height="21" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="35" y="110">UserDB</text>
-	<line stroke="black" stroke-opacity="1" x1="17" y1="112" x2="52" y2="112" />
-	<line stroke="black" stroke-opacity="1" x1="17" y1="114" x2="52" y2="114" />
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="18" y="118">__construct()</text>
-	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="18" y="124">login()</text>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="116" y="110" width="2" height="20" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="18" y="128" width="100" height="2" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="15" y="107" width="101" height="21" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="66" y="111">UserDB</text>
+	<line stroke="black" stroke-opacity="1" x1="15" y1="113" x2="116" y2="113" />
+	<line stroke="black" stroke-opacity="1" x1="15" y1="115" x2="116" y2="115" />
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="16" y="119">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" x="22" y="119">__construct() </text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" font-weight="bold" x="16" y="125">+</text>
+	<text font-family="Helvetica" font-size="4" fill="#000000" xml:space="preserve" text-decoration="underline" x="22" y="125">login($username, $password): boolean </text>
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="113" y1="106" x2="113" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="113" y1="64" x2="107" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="113" y1="64" x2="119" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="107" y1="70" x2="119" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="108" x2="248" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="242" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="254" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="242" y1="70" x2="254" y2="70" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="71" y1="556" x2="71" y2="87" />
+	<line stroke="#000000" stroke-opacity="1" x1="133" y1="552" x2="133" y2="87" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="277" y1="347" x2="277" y2="87" />
+	<line stroke="#000000" stroke-opacity="1" x1="910" y1="343" x2="910" y2="87" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="35" y1="105" x2="35" y2="87" />
+	<line stroke="#000000" stroke-opacity="1" x1="69" y1="106" x2="69" y2="87" />
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="201" y1="381" x2="207" y2="387" />
-	<line stroke="black" stroke-opacity="1" x1="201" y1="381" x2="207" y2="375" />
-	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="253" y1="381" x2="201" y2="381" />
+	<line stroke="black" stroke-opacity="1" x1="645" y1="376" x2="651" y2="382" />
+	<line stroke="black" stroke-opacity="1" x1="645" y1="376" x2="651" y2="370" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="861" y1="376" x2="645" y2="376" />
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="113" y1="190" x2="119" y2="184" />
-	<line stroke="black" stroke-opacity="1" x1="113" y1="190" x2="107" y2="184" />
-	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="113" y1="155" x2="113" y2="190" />
+	<line stroke="black" stroke-opacity="1" x1="248" y1="189" x2="254" y2="183" />
+	<line stroke="black" stroke-opacity="1" x1="248" y1="189" x2="242" y2="183" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="248" y1="157" x2="248" y2="189" />
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="154" y1="587" x2="148" y2="581" />
-	<line stroke="black" stroke-opacity="1" x1="154" y1="587" x2="148" y2="593" />
-	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="102" y1="587" x2="154" y2="587" />
+	<line stroke="black" stroke-opacity="1" x1="365" y1="583" x2="359" y2="577" />
+	<line stroke="black" stroke-opacity="1" x1="365" y1="583" x2="359" y2="589" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="183" y1="583" x2="365" y2="583" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="277" y1="87" x2="113" y2="87" />
+	<line stroke="#000000" stroke-opacity="1" x1="910" y1="87" x2="248" y2="87" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="35" y1="87" x2="114" y2="87" />
+	<line stroke="#000000" stroke-opacity="1" x1="69" y1="87" x2="248" y2="87" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="71" y1="87" x2="114" y2="87" />
+	<line stroke="#000000" stroke-opacity="1" x1="133" y1="87" x2="248" y2="87" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="114" y1="87" x2="114" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="114" y1="64" x2="108" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="114" y1="64" x2="120" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="108" y1="70" x2="120" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="87" x2="248" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="242" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="254" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="242" y1="70" x2="254" y2="70" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="113" y1="87" x2="113" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="113" y1="64" x2="107" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="113" y1="64" x2="119" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="107" y1="70" x2="119" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="87" x2="248" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="242" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="254" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="242" y1="70" x2="254" y2="70" />
 </g>
 <g>
-	<line stroke="#000000" stroke-opacity="1" x1="114" y1="87" x2="114" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="114" y1="64" x2="108" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="114" y1="64" x2="120" y2="70" />
-	<line stroke="#000000" stroke-opacity="1" x1="108" y1="70" x2="120" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="87" x2="248" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="242" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="248" y1="64" x2="254" y2="70" />
+	<line stroke="#000000" stroke-opacity="1" x1="242" y1="70" x2="254" y2="70" />
 </g>
 </svg>
