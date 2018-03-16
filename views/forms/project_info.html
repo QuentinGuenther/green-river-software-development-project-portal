@@ -37,8 +37,8 @@
                                 <p class="text-danger"><b>{{ @errors['description'] }}</b></p>
                             </check>
                         </div>
-                        <div class="form-group col-md-3">
-                            <label>{{@projectStatus}}</label>
+                        <div id="status-form-group" class="form-group col-md-3">
+                            <label>Status</label>
                             <select class="custom-select" name="status">
                                 <repeat group="{{ @status }}" key="{{ @key }}" value="{{ @value }}">
                                     <check if="{{ @key == @projectStatus }}">
