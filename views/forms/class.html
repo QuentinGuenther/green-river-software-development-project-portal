@@ -25,14 +25,14 @@
                         <legend>Class Information</legend>
                         <div class="row">
                             <div class="form-group col-md-5 col-lg-2">
-                                <label for="courseID">Course ID</label>
+                                <label for="courseID">Course ID <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="courseID" id="courseID" value="{{ @courseID }}">
                                 <check if="{{ @errors['courseID'] }}">
                                     <p class="text-danger"><b>{{ @errors['courseID'] }}</b></p>
                                 </check>
                             </div>
                             <div class="form-group col-md-4 col-lg-3">
-                                <label for="quarter">Quarter</label>
+                                <label for="quarter">Quarter <span class="text-danger">*</span></label>
                                 <select class="form-control" name="quarter" id="quarter">
                                     <option>--Select--</option>
                                     <repeat group="{{ @quarters }}" value="{{ @quarterName }}">
@@ -51,14 +51,14 @@
                                 </check>
                             </div>
                             <div class="form-group col-md-3 col-lg-2">
-                                <label for="year">Year</label>
+                                <label for="year">Year <span class="text-danger">*</span></label>
                                 <input type="number" class="form-control" min="2000" max="{{ date('Y') + 1 }}" step="1" value="{{ date('Y') }}" name="year" id="name" value="{{ @year }}">
                                 <check if="{{ @errors['year'] }}">
                                     <p class="text-danger"><b>{{ @errors['year'] }}</b></p>
                                 </check>
                             </div>
                             <div class="form-group col-md-12 col-lg-5">
-                                <label for="instructor">Instructor</label>
+                                <label for="instructor">Instructor <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="instructor" id="instructor" value="{{ @instructor }}">
                                 <check if="{{ @errors['instructor'] }}">
                                     <p class="text-danger"><b>{{ @errors['instructor'] }}</b></p>
