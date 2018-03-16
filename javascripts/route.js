@@ -1,4 +1,5 @@
-$('.clickable').click(function(){
+// routes to a project summary page with an id
+$('.clickableProject').click(function(){
 
 	var row = $(this).closest('tr');
 	var id = row.find('td:eq(0)').text(); // get the first td value, which should be the project id
@@ -9,6 +10,20 @@ $('.clickable').click(function(){
 	window.location.href.replace(url); // go to the url
 });
 
+// routes to a course summary page with an id
+$('.clickableCourse').click(function(){
+	var url = window.location.href;
+
+	var row = $(this).closest('tr');
+	var id = row.find('td:eq(0)').text(); // get the first td value, which should be the project id
+
+	url = url.replace("/project-summary/", "");
+	url = url.replace(/[_0-9]+$/, ''); // https://stackoverflow.com/questions/13563895/removing-the-last-digits-in-string
+	url = url + '/course-summary/' + id;
+
+	location.replace(url); // go to the url
+});
+
 function routeToCourse(id) {
 	var url = window.location.href;
 
@@ -16,13 +31,12 @@ function routeToCourse(id) {
 	url = url.replace(/[_0-9]+$/, ''); // https://stackoverflow.com/questions/13563895/removing-the-last-digits-in-string
 	url = url + '/course-summary/' + id;
 
-	// window.location.href doesn't work here
-	// because webdev is 99.999999% random and full of hacks
-	// that don't make any sense
 	location.replace(url);
 }
 
-function confirmDelete(id, title) {
+// routes to a project deletion page
+// asks if you are sure you want to delete
+function confirmDeleteProject(id, title) {
 
 	var result = confirm('Are you sure you want to delete the project \"' + title + '\"');
 
@@ -31,7 +45,26 @@ function confirmDelete(id, title) {
 		var url = window.location.href += 'delete-project/' + id; // add project-summary and the id to the url
 		url = url.replace('//', '/'); // remove extraneous slashes
 
+		window.location.href.replace(url);
+	}
+}
 
-		window.location.href.replace(url) ; // go to the url
+// routes to course deletion page
+// asks if you are sure you want to delete
+function confirmDeleteCourse(id, number) {
+
+	var result = confirm("Are you sure you wish to delete this course: " + number);
+
+	if(result == true) {
+		var url = window.location.href;
+
+		url = url.replace("/project-summary/", ""); // https://stackoverflow.com/questions/13563895/removing-the-last-digits-in-string
+		url = url.replace(/[_0-9]+$/, '');
+		url = url += '/delete-course/' + id;
+
+		// no consistency in webdev. routing to different urls is magic, 99.99% of the time
+		// it will not work. Therefore you have to try the other 600 methods of doing the same exact
+		// thing until it magically works.
+		window.location = url;
 	}
 }

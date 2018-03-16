@@ -8,11 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="{{ @BASE }}/images/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/nav.css">
     <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/form.css">
     <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/state.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Green River Software Development Project Portal</title>
 </head>
@@ -92,14 +93,18 @@
                             <th scope="col">Course ID</th>
                             <th scope="col">Quarter</th>
                             <th scope="col">Instructor</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         <repeat group="{{ @courses }}" value="{{ @course }}">
-                            <tr onclick="routeToCourse({{ @course->getCourseId() }})">
-                                <td>{{ @course->getCourseId() }}</td>
-                                <td>{{ @course->getQuarter() }}</td>
-                                <td>{{ @course->getInstructor() }}</td>
+                            <tr>
+                                <td class="clickableCourse">{{ @course->getCourseId() }}</td>
+                                <td class="clickableCourse">{{ @course->getQuarter() }}</td>
+                                <td class="clickableCourse">{{ @course->getInstructor() }}</td>
+                                <td width="2" class="text-center" onclick="confirmDeleteCourse( 
+                                                                            {{ @course->getCourseId() }}, 
+                                                                            {{ @course->getCourseNumber() }})"><i class="fa fa-minus-circle"></i></td>
                             </tr>
                         </repeat>
                     </tbody>

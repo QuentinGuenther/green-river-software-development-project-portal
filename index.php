@@ -339,7 +339,27 @@
             $f3->reroute('/');
         }
 
-        echo Template::instance()->render('views/delete.html');
+        echo Template::instance()->render('views/delete-project.html');
+    });
+
+    $f3->route('GET|POST /delete-course/@id', function($f3, $params) {
+        new CourseDB();
+
+        $courseId = $params['id'];
+        $course = CourseDB::getCourse($params['id']);
+
+        $f3->set('course', $course);
+
+        if(isset($_POST['delete'])) {
+            CourseDB::deleteCourse($courseId);
+            $f3->reroute('/');
+        }
+
+        if(isset($_POST['cancel'])) {
+            $f3->reroute('/');
+        }
+
+        echo Template::instance()->render('views/delete-course.html');
     });
 
     // Error page

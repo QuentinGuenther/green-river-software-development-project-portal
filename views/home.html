@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="{{ @BASE }}/images/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/nav.css">
     <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/form.css">
@@ -36,13 +36,13 @@
 	    	<tbody>
 	    		<repeat group="{{ @projects }}" value="{{ @project }}">
 	    			<tr>
-		    			<td class="clickable" id="projectId">{{ @project['projectID'] }}</td>
-		    			<td class="clickable">{{ @project['title'] }}</td>
-		    			<td class="clickable">{{ @project['description'] }}</td>
-		    			<td class="clickable">{{ ucfirst(@project['status']) }}</td>
-		    			<td class="clickable">{{ @project['clientID'] }}</td>
-		    			<td class="clickable">{{ @project['dateModified'] }}</td>
-		    			<td width="2%" class="text-center" onclick="confirmDelete({{ @project['projectID'] }}, '{{ @project['title'] }}' )"><i class="fa fa-minus-circle"></span></td>
+		    			<td class="clickableProject" id="projectId">{{ @project['projectID'] }}</td>
+		    			<td class="clickableProject">{{ @project['title'] }}</td>
+		    			<td class="clickableProject">{{ @project['description'] }}</td>
+		    			<td class="clickableProject">{{ ucfirst(@project['status']) }}</td>
+		    			<td class="clickableProject">{{ @project['clientID'] }}</td>
+		    			<td class="clickableProject">{{ @project['dateModified'] }}</td>
+		    			<td width="2%" class="text-center" onclick="confirmDeleteProject({{ @project['projectID'] }}, '{{ @project['title'] }}' )"><i class="fa fa-minus-circle"></span></td>
 	    			</tr>
 	    		</repeat>
 	    	</tbody>
