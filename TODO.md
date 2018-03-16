@@ -8,4 +8,4 @@
 * Remove HTML URL input types. change to text.
 * ~~Deleting a project should delete its courses. Add this functionallity to the ProjectDB::deleteProject().~~
 * Github API?
-* favicon.ico not loading w/ webpages.
+* ~~favicon.ico not loading w/ webpages.~~
