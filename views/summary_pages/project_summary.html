@@ -104,7 +104,7 @@
                                 <td class="clickableCourse">{{ @course->getInstructor() }}</td>
                                 <td width="2" class="text-center" onclick="confirmDeleteCourse( 
                                                                             {{ @course->getCourseId() }}, 
-                                                                            {{ @course->getCourseNumber() }})"><i class="fa fa-minus-circle"></i></td>
+                                                                            '{{ @course->getCourseNumber() }}')"><i class="fa fa-minus-circle"></i></td>
                             </tr>
                         </repeat>
                     </tbody>
