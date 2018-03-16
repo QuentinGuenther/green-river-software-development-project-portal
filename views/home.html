@@ -10,7 +10,9 @@
     <link rel="icon" href="{{ @BASE }}/images/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/nav.css">
-    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/form.css">
+	<link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/form.css">
+	<link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/state.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Green River Software Development Project Portal</title>
@@ -19,29 +21,31 @@
     <include href="/views/nav.html">
 
     <div class="container">
-    	<h1 class="pt-4 pb-2 text-center">Current Projects</h1>
+    	<h1 class="pt-4 pb-2 text-center">Projects</h1>
 
-	    <table class="table table-hover">
+	    <table id="project-table" class="table table-hover">
 	    	<thead>
 	    		<tr>
-	    			<th>ID</th>
+	    			<th class="d-none">ID</th>
 	    			<th>Project Title</th>
-	    			<th>Project Description</th>
+					<th>Project Description</th>
+					<th class="d-none">Full Description</th>
 	    			<th>Status</th>
-	    			<th>Client ID</th>
-	    			<th>Date Modified</th>
+	    			<th class="d-none">Client ID</th>
+	    			<th class="d-none">Date Modified</th>
 	    			<th>Delete</th>
 	    		</tr>
 	    	</thead>
 	    	<tbody>
 	    		<repeat group="{{ @projects }}" value="{{ @project }}">
 	    			<tr>
-		    			<td class="clickableProject" id="projectId">{{ @project['projectID'] }}</td>
+		    			<td class="clickableProject d-none" id="projectId">{{ @project['projectID'] }}</td>
 		    			<td class="clickableProject">{{ @project['title'] }}</td>
-		    			<td class="clickableProject">{{ @project['description'] }}</td>
-		    			<td class="clickableProject">{{ ucfirst(@project['status']) }}</td>
-		    			<td class="clickableProject">{{ @project['clientID'] }}</td>
-		    			<td class="clickableProject">{{ @project['dateModified'] }}</td>
+						<td class="clickableProject">{{ (strlen(@project['description']) > 100) ? substr(@project['description'], 0, 100) . '...' : @project['description'] }}</td>
+						<td class="clickableProject d-none">{{ @project['description'] }}</td>
+		    			<td class="clickableProject {{ @project['status'] }}">{{ ucfirst(@project['status']) }}</td>
+		    			<td class="clickableProject d-none">{{ @project['clientID'] }}</td>
+		    			<td class="clickableProject d-none">{{ @project['dateModified'] }}</td>
 		    			<td width="2%" class="text-center" onclick="confirmDeleteProject({{ @project['projectID'] }}, '{{ @project['title'] }}' )"><i class="fa fa-minus-circle"></span></td>
 	    			</tr>
 	    		</repeat>
@@ -51,8 +55,12 @@
             <a class="btn gr-btn" href="./new-project" role="button">New Project</a>
 	    </div>
     </div>
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-	<script src="./javascripts/route.js"></script>	
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+	<script src="./javascripts/route.js"></script>
+
+	<script src="{{ @BASE }}/javascripts/data-table.js"></script>
 </body>
 </html>
