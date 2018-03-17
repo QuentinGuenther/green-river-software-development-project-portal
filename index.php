@@ -21,7 +21,9 @@
 
     // Default route
     $f3->route('GET|POST /', function($f3) {
-        
+        if(!isset($_SESSION['username']))
+            $f3->reroute('login');
+
         $template = new Template();
 
         $db = new ProjectDB();
@@ -63,7 +65,18 @@
         echo Template::instance()->render('views/login.html');
     });
 
+    $f3->route('GET /logout', function($f3) {
+        if(isset($_SESSION['username']))
+            unset($_SESSION['username']);
+
+
+        $f3->reroute('login');
+    });
+
     $f3->route('GET|POST /new-class/@id', function($f3, $params) {
+        if(!isset($_SESSION['username']))
+            $f3->reroute('login');
+
         $quarters = array("fall", "winter", "spring", "summer");
         $f3->set("quarters", $quarters);
 
@@ -165,6 +178,9 @@
     });
 
     $f3->route('GET|POST /new-project', function($f3) {
+        if(!isset($_SESSION['username']))
+            $f3->reroute('login');
+
         require('models/address-helpers.php');
         require('models/status-helpers.php');
 
@@ -285,6 +301,9 @@
     });
 
     $f3->route('GET /project-summary/@id', function($f3, $params) {
+        if(!isset($_SESSION['username']))
+            $f3->reroute('login');
+
         new ProjectDB();
         new CourseDB();
 
@@ -304,6 +323,8 @@
     });
 
     $f3->route('GET /course-summary/@id', function($f3, $params) {
+        if(!isset($_SESSION['username']))
+            $f3->reroute('login');
 
         new CourseDB();
 
@@ -320,6 +341,9 @@
     });
 
     $f3->route('GET|POST /delete-project/@id', function($f3, $params){
+        if(!isset($_SESSION['username']))
+            $f3->reroute('login');
+
         new ProjectDB();
         new CourseDB();
 
@@ -350,6 +374,9 @@
     });
 
     $f3->route('GET|POST /delete-course/@id', function($f3, $params) {
+        if(!isset($_SESSION['username']))
+            $f3->reroute('login');
+        
         new CourseDB();
 
         $courseId = $params['id'];
