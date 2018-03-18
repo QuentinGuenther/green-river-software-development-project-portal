@@ -38,6 +38,7 @@
 
     // Login route
     $f3->route('GET|POST /login', function($f3) {
+
         if(isset($_POST['submit'])) {
             $errors = array();
 
@@ -109,7 +110,7 @@
                 $errors['quarter'] = 'Invalid course quarter';
 
             if(!validDate($_POST['year']))
-                $errors['year'] = "Invalid year: must be ".date('Y')." or greater";
+                $errors['year'] = "Year must be ".(date('Y') - 1)." or greater";
 
             if(!validGithubUrl($_POST['github']))
                 $errors['github'] = "Not a github url";

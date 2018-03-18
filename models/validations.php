@@ -20,7 +20,7 @@
 	}
 
 	function validDate($year) {
-		return $year >= date('Y');
+		return $year >= (date('Y') - 1) && $year <= (date('Y') + 1);
 	}
 
 	function validGithubUrl($url) {
