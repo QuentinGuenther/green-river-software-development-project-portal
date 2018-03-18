@@ -41,9 +41,9 @@
             <div class="col-lg-5">
                 <h2 class="text-center">Links</h2>
                 <div class="list-group list-group-flush">
-                    <a href="{{ @course->getGitHub() }}" id="GitHubUrl" class="list-group-item list-group-item-action text-center"><strong>Github</strong></a>
-                    <a href="{{ @course->getTrello() }}" class="list-group-item list-group-item-action text-center"><strong>Trello</strong></a>
-                    <a href="{{ @course->getUrl() }}" class="list-group-item list-group-item-action text-center"><strong>URL</strong></a>
+                    <a href="{{ @course->getGitHub() }}" id="GitHubUrl" class="list-group-item list-group-item-action text-center" target="_blank"><strong>Github</strong></a>
+                    <a href="{{ @course->getTrello() }}" class="list-group-item list-group-item-action text-center" target="_blank"><strong>Trello</strong></a>
+                    <a href="{{ @course->getUrl() }}" class="list-group-item list-group-item-action text-center" target="_blank"><strong>URL</strong></a>
                 </div>
                 <p class="mt-1">
                     <a class="btn gr-btn" data-toggle="collapse" href="#username_password" role="button" aria-expanded="false" aria-controls="username_password">Show/Hide Username and Password</a>
@@ -56,7 +56,7 @@
                 </div>
             </div> 
             <div class="col-lg-7">
-                <h2 class="text-center">Github Collaborators</h2>
+                <h2 class="text-center">GitHub Collaborators</h2>
                 <table class="table table-sm">
                     <thead>
                         <tr>
