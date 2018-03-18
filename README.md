@@ -26,7 +26,7 @@ Many projects go through several iterations. So, they also need a way to view a 
 5. Has a history of commits from both team members to a Git repository.
 	* The Git repository activity can be viewed at (https://github.com/QuentinGuenther/green-river-software-development-project-portal/graphs/contributors).
 6. Uses OOP, and defines multiple classes, including at least one inheritance relationship.
-	* The class diagram for this project can be viewed at (./uml/class-diagram.svg), along with at the bottom of this document.
+	* The class diagram for this project can be viewed at [/uml/class-diagram.svg](./uml/class-diagram.svg), along with at the bottom of this document.
 7. Contains full Docblocks for all PHP files.
     * Each PHP file has Docblocks
 8. Has full validation on the client side through JavaScript and server side through PHP.
