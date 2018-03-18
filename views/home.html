@@ -43,7 +43,7 @@
 		    			<td class="clickableProject">{{ @project['title'] }}</td>
 						<td class="clickableProject">{{ (strlen(@project['description']) > 100) ? substr(@project['description'], 0, 100) . '...' : @project['description'] }}</td>
 						<td class="clickableProject d-none">{{ @project['description'] }}</td>
-		    			<td class="clickableProject {{ @project['status'] }}">{{ ucfirst(@project['status']) }}</td>
+		    			<td class="clickableProject {{ @project['status'] }}"><b>{{ ucfirst(@project['status']) }}</b></td>
 		    			<td class="clickableProject d-none">{{ @project['clientID'] }}</td>
 		    			<td class="clickableProject d-none">{{ @project['dateModified'] }}</td>
 		    			<td width="2%" class="text-center" onclick="confirmDeleteProject({{ @project['projectID'] }}, '{{ @project['title'] }}' )"><i class="fa fa-minus-circle"></span></td>

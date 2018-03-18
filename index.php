@@ -18,9 +18,11 @@
     // Set debug level to dev
     $f3->set('DEBUG', 3);
 
-
     // Default route
     $f3->route('GET|POST /', function($f3) {
+
+        //$_SESSION['username'] = 'temp';
+
         if(!isset($_SESSION['username']))
             $f3->reroute('login');
 
@@ -37,10 +39,7 @@
     // Login route
     $f3->route('GET|POST /login', function($f3) {
         if(isset($_POST['submit'])) {
-
             $errors = array();
-
-            //include('models/login-validation.php');
 
             if(!validEmail($_POST['username']))
                 $errors['username'] = 'Username must be a valid email';
@@ -159,10 +158,12 @@
                                     $_POST['notes'],
                                     $project);
 
+                // insert course if update flag is not set
                 if(!$update)
                     CourseDB::insertCourse($course);
-
+               
                 else {
+                    // update current course
                     CourseDB::updateCourse($course, $params['id']);
                     $f3->reroute('/course-summary/@id');
                 }
@@ -359,15 +360,19 @@
         $f3->set('project', $project);
         $f3->set('client', $client);
 
+        // delete a project and reroute back to home page
         if(isset($_POST['delete'])) {
             ProjectDB::deleteProject($projectId);
 
+            // each project has a list of courses
+            // so we loop through them all and delete them
             foreach($courses as $course)
                 CourseDB::deleteCourse($course->getCourseId());
 
             $f3->reroute('/');
         }
 
+        // just reroute back to main page
         if(isset($_POST['cancel'])) {
             $f3->reroute('/');
         }
@@ -386,11 +391,13 @@
 
         $f3->set('course', $course);
 
+        // delete course, then reroute to main page
         if(isset($_POST['delete'])) {
             CourseDB::deleteCourse($courseId);
             $f3->reroute('/');
         }
 
+        // just reroute back to main page
         if(isset($_POST['cancel'])) {
             $f3->reroute('/');
         }
