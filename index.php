@@ -330,12 +330,14 @@
 
         $course = CourseDB::getCourse($params['id']);
         $project = $course->getProject();
+        $projectId = CourseDB::getProjectID($params['id']);
 
         $courseId = $params['id'];
 
         $f3->set('course', $course);
         $f3->set('courseId', $courseId);
         $f3->set('project', $project);
+        $f3->set('projectId', $projectId);
 
         echo Template::instance()->render('views/summary_pages/course_summary.html');
     });

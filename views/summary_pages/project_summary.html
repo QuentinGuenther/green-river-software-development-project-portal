@@ -90,6 +90,7 @@
                 <table class="table table-hover table-striped">
                     <thead>
                         <tr>
+                            <th class="d-none" scope="col">ID</th>
                             <th scope="col">Course ID</th>
                             <th scope="col">Quarter</th>
                             <th scope="col">Instructor</th>
@@ -99,8 +100,9 @@
                     <tbody>
                         <repeat group="{{ @courses }}" value="{{ @course }}">
                             <tr>
-                                <td class="clickableCourse">{{ @course->getCourseId() }}</td>
-                                <td class="clickableCourse">{{ @course->getQuarter() }}</td>
+                                <td class="clickableCourse d-none">{{ @course->getCourseId() }}</td>
+                                <td class="clickableCourse">{{ @course->getCourseNumber() }}</td>
+                                <td class="clickableCourse">{{ ucfirst(@course->getQuarter()) }}</td>
                                 <td class="clickableCourse">{{ @course->getInstructor() }}</td>
                                 <td width="2" class="text-center" onclick="confirmDeleteCourse( 
                                                                             {{ @course->getCourseId() }}, 
