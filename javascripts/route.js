@@ -24,6 +24,7 @@ $('.clickableCourse').click(function(){
 	location.replace(url); // go to the url
 });
 
+// routes to a course summary page given an id
 function routeToCourse(id) {
 	var url = window.location.href;
 
@@ -58,13 +59,10 @@ function confirmDeleteCourse(id, number) {
 	if(result == true) {
 		var url = window.location.href;
 
-		url = url.replace("/project-summary/", ""); // https://stackoverflow.com/questions/13563895/removing-the-last-digits-in-string
-		url = url.replace(/[_0-9]+$/, '');
+		url = url.replace("/project-summary/", ""); 
+		url = url.replace(/[_0-9]+$/, ''); // https://stackoverflow.com/questions/13563895/removing-the-last-digits-in-string
 		url = url += '/delete-course/' + id;
 
-		// no consistency in webdev. routing to different urls is magic, 99.99% of the time
-		// it will not work. Therefore you have to try the other 600 methods of doing the same exact
-		// thing until it magically works.
 		window.location = url;
 	}
 }

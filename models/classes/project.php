@@ -83,6 +83,11 @@
 			$this->status = $status;
 		}
 
+		/** 
+		 * Set the client for this project
+		 * @param Client $client client object
+		 * @return null
+		 */
 		public function setClient($client)
 		{
 			$this->client = unserialize($client);

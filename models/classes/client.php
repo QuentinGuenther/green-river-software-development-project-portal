@@ -125,7 +125,6 @@
 			return $this->website;
 		}
 
-
 		/**
 		 * Set the phone number of the client.
 		 * @param string $phoneNumber The client's phone number.

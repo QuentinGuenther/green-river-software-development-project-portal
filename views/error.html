@@ -1,10 +1,31 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="icon" href="{{ @BASE }}/images/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="{{ @BASE }}/styles/form.css">
+    <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/state.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Error</title>
 </head>
 <body>
-    <h1>{{ @ERROR.text }}</h1>
-    <p>Error code: {{ @ERROR.code }}</p>
+    <include href="/views/nav.html">
+    <div class="container">
+        <div class="text-center pt-4">
+            <h1 class="pb-4">Page Not Found!</h1>
+            <h4>{{ @ERROR.text }}</h4>
+            <p>Error code: {{ @ERROR.code }}</p>
+        </div>
+    </div>
 </body>
 </html>

@@ -42,6 +42,11 @@
 			return $course;
 		}
 
+		/**
+		 * Get all the courses with an ID.
+		 * @param int $id Course ID.
+		 * @return array of Course objects.
+		 */
 		public static function getCourseByProjectID($id)
 		{
 			new ProjectDB();

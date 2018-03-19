@@ -18,7 +18,13 @@
     // Set debug level to dev
     $f3->set('DEBUG', 3);
 
-    // Default route
+    /**
+     * Default route - the homepage
+     * 
+     * @route GET|POST 
+     * @alias /views/home.html
+     * @param $f3 Base
+     */
     $f3->route('GET|POST /', function($f3) {
 
         //$_SESSION['username'] = 'temp';
@@ -36,7 +42,13 @@
         echo $template->render('views/home.html');
     });
 
-    // Login route
+    /**
+     * Route for the login page
+     * 
+     * @route GET|POST 
+     * @alias /views/login.html
+     * @param $f3 Base
+     */
     $f3->route('GET|POST /login', function($f3) {
 
         if(isset($_POST['submit'])) {
@@ -65,6 +77,14 @@
         echo Template::instance()->render('views/login.html');
     });
 
+    /**
+     * Route for the logout page
+     * unsets the user from the session
+     * 
+     * @route GET 
+     * @alias /views/logout.html
+     * @param $f3 Base
+     */
     $f3->route('GET /logout', function($f3) {
         if(isset($_SESSION['username']))
             unset($_SESSION['username']);
@@ -73,6 +93,17 @@
         $f3->reroute('login');
     });
 
+    /**
+     * Route for a new class
+     * Takes a project id to 
+     * create a new course for
+     * a project
+
+     * @route GET|POST 
+     * @alias /views/forms/class.html
+     * @param $f3 Base
+     * @param $params array
+     */
     $f3->route('GET|POST /new-class/@id', function($f3, $params) {
         if(!isset($_SESSION['username']))
             $f3->reroute('login');
@@ -85,6 +116,8 @@
 
         $update = false; // update flag to see if we need to update course
 
+        // if course has a number, set all the variables
+        // to the page, also set the update flag to true
         if(!empty($course->getCourseNumber())) {
             $update = true;
             $f3->set('courseID', $course->getCourseNumber());
@@ -179,6 +212,13 @@
         echo Template::instance()->render('views/forms/class.html');
     });
 
+    /**
+     * Route for a new project
+     * 
+     * @route GET|POST 
+     * @alias /views/forms/project_info.html
+     * @param $f3 Base
+     */
     $f3->route('GET|POST /new-project', function($f3) {
         if(!isset($_SESSION['username']))
             $f3->reroute('login');
@@ -295,6 +335,7 @@
                     ProjectDB::updateProject($project, $_GET['id']);
                 }
 
+                // go back to homepage
                 $f3->reroute('/');
             }
         }
@@ -302,6 +343,16 @@
         echo Template::instance()->render('views/forms/project_info.html');
     });
 
+    /**
+     * Route for a project summary page
+     * Takes an id to search from the database
+     * with
+     * 
+     * @route GET|POST 
+     * @alias /views/summary_pages/project_summary.html
+     * @param $f3 Base
+     * @param $params array
+     */
     $f3->route('GET /project-summary/@id', function($f3, $params) {
         if(!isset($_SESSION['username']))
             $f3->reroute('login');
@@ -324,6 +375,16 @@
         echo Template::instance()->render('views/summary_pages/project_summary.html');
     });
 
+    /**
+     * Route for a course summary page
+     * Takes an id to search the database 
+     * for a course
+     * 
+     * @route GET|POST 
+     * @alias /views/summary_pages/course_summary.html
+     * @param $f3 Base
+     * @param $params array
+     */
     $f3->route('GET /course-summary/@id', function($f3, $params) {
         if(!isset($_SESSION['username']))
             $f3->reroute('login');
@@ -344,6 +405,19 @@
         echo Template::instance()->render('views/summary_pages/course_summary.html');
     });
 
+    /**
+     * Route for a delete project page
+     * Takes a project id to get the project
+     * information from the database
+     * 
+     * Deletes a project as well as the associated
+     * courses
+     * 
+     * @route GET|POST 
+     * @alias /views/delete-project.html
+     * @param $f3 Base
+     * @param $params array
+     */
     $f3->route('GET|POST /delete-project/@id', function($f3, $params){
         if(!isset($_SESSION['username']))
             $f3->reroute('login');
@@ -381,6 +455,18 @@
         echo Template::instance()->render('views/delete-project.html');
     });
 
+    /**
+     * Route for a delete course page
+     * Takes a course id to get the course
+     * information from the database
+     * 
+     * Deletes a course
+     * 
+     * @route GET|POST 
+     * @alias /views/delete-course.html
+     * @param $f3 Base
+     * @param $params array
+     */
     $f3->route('GET|POST /delete-course/@id', function($f3, $params) {
         if(!isset($_SESSION['username']))
             $f3->reroute('login');
@@ -388,7 +474,7 @@
         new CourseDB();
 
         $courseId = $params['id'];
-        $course = CourseDB::getCourse($params['id']);
+        $course = CourseDB::getCourse($params['id']); // get the course from the id
 
         $f3->set('course', $course);
 
@@ -406,9 +492,18 @@
         echo Template::instance()->render('views/delete-course.html');
     });
 
-    // Error page
+    /**
+     * Route for the error page
+     * 
+     * If a page is not found, the error page
+     * gets displayed
+     *
+     * @alias /views/error.html
+     * @param $f3 Base
+     */
     $f3->set('ONERROR', function($f3) {
-        echo Template::instance()->render('views/error.html');
+        if($f3->get('ERROR.code') == '404')
+            echo Template::instance()->render('views/error.html');
     });
 
     $f3->run();
