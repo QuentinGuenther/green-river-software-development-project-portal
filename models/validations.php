@@ -57,5 +57,5 @@
 	}
 
 	function validZip($zipcode) {
-		return preg_match("/[0-9]{5}/", $zipcode);
+		return preg_match("/[0-9]{5}/", $zipcode) && strlen($zipcode) == 5;
 	}
