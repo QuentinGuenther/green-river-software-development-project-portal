@@ -262,36 +262,6 @@
             if(empty($_POST['projectTitle']))
                 $errors['title'] = 'Please enter a project title';
 
-            if(empty($_POST['projectDescription']))
-                $errors['description'] = 'Please enter a brief description';
-
-            if(empty($_POST['companyName']))
-                $errors['company'] = 'Please enter a company name';
-
-            if(!validUrl($_POST['companyWebsite']))
-                $errors['website'] = 'Please enter a valid url';
-
-            if(empty($_POST['address']))
-                $errors['address'] = 'Please enter an address';
-
-            if(!validZip($_POST['zipcode']))
-                $errors['zipcode'] = 'Please enter a valid zip';
-
-            if(empty($_POST['city']))
-                $errors['city'] = 'Please enter a city';
-
-            if(empty($_POST['clientName']))
-                $errors['clientName'] = 'Please enter the client\'s name';
-
-            if(empty($_POST['clientJobTitle']))
-                $errors['clientJobTitle'] = 'Please enter client\'s job title';
-
-            if(!validEmail($_POST['clientEmail']))
-                $errors['clientEmail'] = 'Please enter a valid client email';
-
-            if(!validPhone($_POST['clientPhoneNumber']))
-                $errors['clientPhone'] = 'Invalid format, must be: 123-456-8910';
-
             $f3->set('title', $_POST['projectTitle']);
             $f3->set('description', $_POST['projectDescription']);
             $f3->set('projectStatus', $_POST['status']);

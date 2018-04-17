@@ -31,7 +31,7 @@
                             </check>
                         </div>
                         <div class="form-group">
-                            <label>Description <span class="text-danger">*</span></label>
+                            <label>Description</label>
                             <textarea class="form-control" name="projectDescription" id="projectDescription">{{ @description }}</textarea>
                             <check if="{{ @errors['description'] }}">
                                 <p class="text-danger"><b>{{ @errors['description'] }}</b></p>
@@ -61,7 +61,7 @@
                     <fieldset>
                         <legend>Client Information</legend>
                         <div class="form-group">
-                            <label>Company Name <span class="text-danger">*</span></label>
+                            <label>Company Name</label>
                             <input type="text" class="form-control" name="companyName" id="companyName" value="{{ @company }}">
                             <check if="{{ @errors['company'] }}">
                                 <p class="text-danger"><b>{{ @errors['company'] }}</b></p>
@@ -104,14 +104,14 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>City <span class="text-danger">*</span></label>
+                            <label>City</label>
                             <input type="text" class="form-control" name="city" value="{{ @city }}">
                             <check if="{{ @errors['city'] }}">
                                 <p class="text-danger"><b>{{ @errors['city'] }}</b></p>
                             </check>
                         </div>
                         <div class="form-group">
-                            <label>Postal Code <span class="text-danger">*</span></label>
+                            <label>Postal Code</label>
                             <input type="text" class="form-control" name="zipcode" value="{{ @zipcode }}">
                             <check if="{{ @errors['zipcode'] }}">
                                 <p class="text-danger"><b>{{ @errors['zipcode'] }}</b></p>
@@ -123,28 +123,28 @@
                     <fieldset>
                         <legend>Contact</legend>
                         <div class="form-group">
-                            <label>Name <span class="text-danger">*</span></label>
+                            <label>Name</label>
                             <input type="text" class="form-control" name="clientName" value="{{ @clientName }}">
                             <check if="{{ @errors['clientName'] }}">
                                 <p class="text-danger"><b>{{ @errors['clientName'] }}</b></p>
                             </check>
                         </div>
                         <div class="form-group">
-                            <label>Job Title <span class="text-danger">*</span></label>
+                            <label>Job Title</label>
                             <input type="text" class="form-control" name="clientJobTitle" value="{{ @clientJobTitle }}">
                             <check if="{{ @errors['clientJobTitle'] }}">
                                 <p class="text-danger"><b>{{ @errors['clientJobTitle'] }}</b></p>
                             </check>
                         </div>
                         <div class="form-group">
-                            <label>Email <span class="text-danger">*</span></label>
+                            <label>Email</label>
                             <input type="email" class="form-control" name="clientEmail" value="{{ @clientEmail }}">
                             <check if="{{ @errors['clientEmail'] }}">
                                 <p class="text-danger"><b>{{ @errors['clientEmail'] }}</b></p>
                             </check>
                         </div>
                         <div class="form-group">
-                            <label>Phone Number <span class="text-danger">*</span></label>
+                            <label>Phone Number</label>
                             <input type="text" class="form-control" name="clientPhoneNumber" value="{{ @clientPhone }}">
                             <check if="{{ @errors['clientPhone'] }}">
                                 <p class="text-danger"><b>{{ @errors['clientPhone'] }}</b></p>
