@@ -330,6 +330,8 @@
         new ProjectDB();
         new CourseDB();
 
+        $currentLinks = (CourseDB::getCurrentLinks($params['id']));
+
         $project = ProjectDB::getProject($params['id']);
         $courses = CourseDB::getCourseByProjectID($params['id']);
 
@@ -341,6 +343,7 @@
         $f3->set('client', $client);
         $f3->set('projectID', $projectID);
         $f3->set('courses', $courses);
+        $f3->set('currentLinks', $currentLinks);
 
         echo Template::instance()->render('views/summary_pages/project_summary.html');
     });

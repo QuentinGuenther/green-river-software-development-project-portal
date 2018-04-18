@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/nav.css">
     <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/form.css">
     <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/state.css">
+    <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/styles.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Green River Software Development Project Portal</title>
@@ -81,7 +82,23 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <check if="{{ @currentLinks[0]['github'] != '' || @currentLinks[0]['trello'] != '' || @currentLinks[0]['url'] != '' }}">
+                    <h2 class="">Most Current Links:</h2>
+                    <check if="{{ @currentLinks[0]['github'] != '' }}">
+                        <a href="{{ @currentLinks[0]['github'] }}" class="text-center"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+                    </check>
+                    <check if="{{ @currentLinks[0]['trello'] != '' }}"></check>
+                        <a href="{{ @currentLinks[0]['trello'] }}"><i class="fa fa-trello fa-2x" aria-hidden="true"></i></a>
+                    </check>
+                    <check if="{{ @currentLinks[0]['url'] != '' }}"></check>
+                        <a href="{{ @currentLinks[0]['url'] }}"><i class="fa fa-desktop fa-2x" aria-hidden="true"></i></a>
+                    </check>
+                </check>
+            </div>
         </div>
         <hr>
         <div class="row">

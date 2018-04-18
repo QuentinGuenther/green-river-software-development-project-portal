@@ -79,6 +79,21 @@
 		}
 
 		/**
+		 * Get the GitHub, Trello, and URL from the most current course.
+		 *
+		 * @param int $id Course ID.
+		 * @return array of urls
+		 */
+		public static function getCurrentLinks($id)
+		{
+			$sql = "SELECT github, trello, url FROM Course WHERE projectID = :id ORDER BY dateCreated DESC LIMIT 1";
+			$params = array(':id' => array($id => PDO::PARAM_INT));
+			$result = parent::get($sql, $params);
+
+			return $result;
+		}
+
+		/**
 		 * This function inserts a new course into the database,
 		 * unless an identical row exists. Also inserts the course's
 		 * project.
