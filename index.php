@@ -300,13 +300,13 @@
                 // if id is not set, insert new
                 // row, otherwise just update the row
                 if(!isset($_GET['id']))
-                    ProjectDB::insertProject($project);
+                    $projectID = ProjectDB::insertProject($project);
                 else {
-                    ProjectDB::updateProject($project, $_GET['id']);
+                    $projectID = ProjectDB::updateProject($project, $_GET['id']);
                 }
 
                 // go back to homepage
-                $f3->reroute('/');
+                $f3->reroute("/project-summary/$projectID");
             }
         }
 
