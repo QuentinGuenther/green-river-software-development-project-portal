@@ -20,14 +20,14 @@
             </check>
             <div class="form-group">
                 <label for="username"><strong>Username</strong></label>
-                <input type="email" class="form-control" id="username" name="username" placeholder="admin@admin.com" value="{{ @username }}"/> <!-- Temporary Placeholder Value !-->
+                <input type="email" class="form-control" id="username" name="username" placeholder="foo@bar.com" value="{{ @username }}"/> <!-- Temporary Placeholder Value !-->
                 <check if="{{ @errors['username'] }}">
                     <p class="text-danger text-center"><b>{{ @errors['username'] }}</b></p>
                 </check>
             </div>
             <div class="form-group">
                 <label for="password"><strong>Password</strong></label>
-                <input type="password" class="form-control" id="password" name="password" value="@dm1n" /> <!-- Temporary Password Value !-->
+                <input type="password" class="form-control" id="password" name="password" value="1234" /> <!-- Temporary Password Value !-->
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-green" name="submit" value="login" />
