@@ -209,4 +209,20 @@
 
 			return $result['projectID'];
 		}
+
+		/**
+		 * Get the course's project ID.
+		 * @param int @id The ID of the course.
+		 * @return int The project's ID.
+		 */
+		public static function getCourseID($id)
+		{
+			$sql = "SELECT projectID FROM Course WHERE courseID = :id";
+			$params = array(':id' => array($id => PDO::PARAM_INT));
+			$result = parent::get($sql, $params);
+			$result = $result[0];
+
+			return $result['projectID'];
+		}
+
 	}

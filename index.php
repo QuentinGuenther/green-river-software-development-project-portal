@@ -194,18 +194,22 @@
 
                 // insert course if update flag is not set
                 if(!$update)
-                    CourseDB::insertCourse($course);
+                {
+                    $courseID = CourseDB::insertCourse($course);
+                    
+                    //$_SESSION['course'] = $course;
+
+                    $f3->reroute('/course-summary/'.$courseID);
+                }
+                   
                
                 else {
                     // update current course
                     CourseDB::updateCourse($course, $params['id']);
                     $f3->reroute('/course-summary/@id');
                 }
-
+                
                 $f3->set('course', $course);
-                //$_SESSION['course'] = $course;
-
-                $f3->reroute('/project-summary/'.$projectID);
             }
         }
 
@@ -299,14 +303,15 @@
 
                 // if id is not set, insert new
                 // row, otherwise just update the row
-                if(!isset($_GET['id']))
+                if(!isset($_GET['id'])) {
                     $projectID = ProjectDB::insertProject($project);
+                    $f3->reroute("/project-summary/$projectID");
+                }
+                
                 else {
                     $projectID = ProjectDB::updateProject($project, $_GET['id']);
+                    $f3->reroute('/project-summary/'.$_GET['id']);
                 }
-
-                // go back to homepage
-                $f3->reroute("/project-summary/$projectID");
             }
         }
 
