@@ -205,7 +205,7 @@
                 $f3->set('course', $course);
                 //$_SESSION['course'] = $course;
 
-                $f3->reroute('/project-summary/@id');
+                $f3->reroute('/project-summary/'.$projectID);
             }
         }
 
